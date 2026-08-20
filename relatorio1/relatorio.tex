@@ -171,18 +171,30 @@
 
 	Dado um pêndulo simples composto por um corpo pontual de massa $m$ preso a um suporte estático por um fio inextensível de massa desprezível
 	e comprimento $l$, com uma aceleração local da gravidade constante de módulo $g$, tem-se que o pêndulo pode se mover apenas ao longo da circunferência
-	de raio $l$ centrada no ponto de fixação do pêndulo, de modo que pode-se tomar uma coordenada generalizada $s$ correspondente ao comprimento
-	do arco de circunferência cujas extremidades são o ponto mais baixo que o pêndulo pode atingir (quando o fio está alinhado com a direção da
-	aceleração local da gravidade) e a posição do pêndulo, com o sentido anti-horário sendo tomado como o positivo. Sendo $\theta$ o ângulo associado
-	ao arco, tem-se que $s = l\theta$ Dessa forma, ao definir a linha
-	horizontal que passa pelo ponto de suporte do pêndulo como a refeência para o potencial gravitacional, temos que as energias cinética (Eq. \ref{eq:cinetica})
-	e potencial (Eq. \ref{eq:potencial}) associadas ao sistema são:
+	de raio $l$ centrada no ponto de fixação do pêndulo, de modo que pode-se tomar uma coordenada generalizada $\theta$ correspondente ao arco de
+	circunferência cujas extremidades são o ponto mais baixo que o pêndulo pode atingir (quando o fio está alinhado com a direção da
+	aceleração local da gravidade) e a posição do pêndulo, com o sentido anti-horário sendo tomado como o positivo e sendo $s = l\theta$ o comprimento do arco.
+	Dessa forma, ao definir a linha horizontal que passa pelo ponto de suporte do pêndulo como a refeência para o potencial gravitacional, temos que
+	as energias cinética (Eq. \ref{eq:cinetica}) e potencial (Eq. \ref{eq:potencial}) associadas ao sistema são
 	\begin{equation}\label{eq:cinetica}
-		K = \frac{m\dot{s}}{2}
+		K = \frac{m\dot{s}^2}{2} = \frac{ml^2\dot{\theta}^2}{2}
 	\end{equation}
 	e
 	\begin{equation}\label{eq:potencial}
 		U = -mgl\cos(\theta)
+	\end{equation}
+	onde $\dot{y}$ representa a derivada temporal de uma função $y$.
+	O Lagrangiano resultante, dado pela relação $L = K - U$, é expresso na equação \ref{eq:lagrangiano}
+	\begin{equation}\label{eq:lagrangiano}
+		L = \frac{ml^2\dot{\theta}^2}{2} -mgl\cos(\theta)
+	\end{equation}
+	A partir da equação de Euler-Lagrange
+	\begin{equation}
+		\frac{d}{dt} \frac{\partial L}{\partial \dot{\theta}} = \frac{\partial L}{\partial \theta}
+	\end{equation}
+	chega-se na equação
+	\begin{equation}
+		a = 2;
 	\end{equation}
 
 
