@@ -23,6 +23,7 @@
 \usepackage{graphicx}
 \usepackage{ragged2e}
 \usepackage{multirow}
+\usepackage{multicol}
 \usepackage{setspace}
 \usepackage{icomma}
 \usepackage{array}
@@ -92,6 +93,11 @@
 {0cm}
 {1.5\baselineskip}
 {0.8\baselineskip}
+
+\newcounter{rownum}
+\setcounter{rownum}{0}
+
+\newcolumntype{N}{>{\stepcounter{rownum}\therownum.}l}
 
 \begin{document}
 \pagestyle{empty}
@@ -178,84 +184,47 @@ como mostra a Figura \ref{fig:pendulo}.
 
 
 \section{RESULTADOS}
-A Tabela \ref{tab:medições_cm} e \ref{tab:medições_cb}
-contém as medições de cada aluno do período de $10$ oscilações do pêndulo utilizando cronômetro de mão e de bancada, respectivamente.
+A Tabela \ref{tab:medições}
+contém as medições  do período de oscilação do pêndulo utilizando um cronômetro.
 \begin{table}[H]
-
 	\centering
-	\caption{Medidas com cronômetro de mão do período de 10 oscilações}
-	\begin{tabular}{c c c c c c}
+	\caption{Medições do período de oscilação do pêndulo ($T$) em segundos.}
+	\label{tab:medições}
+	\vspace{0.5\baselineskip}
+	\begin{tabular}{r l @{\hspace{0.8cm}} r l @{\hspace{0.8cm}} r l @{\hspace{0.8cm}} r l}
 		\hline
-		\#Experimento & ${10T_{1}}\ \mathrm{(s)}$ & ${10T_{2}}\ \mathrm{(s)}$ & ${10T_{3}}\ \mathrm{(s)}$ & ${10T_{4}}\ \mathrm{(s)}$\  & ${10T_{5}}\ \mathrm{(s)}$ \\ [0.5ex]
+		\multicolumn{1}{c}{nº} & \multicolumn{1}{c}{$T$ (s)} & \multicolumn{1}{c}{nº} & \multicolumn{1}{c}{$T$ (s)} & \multicolumn{1}{c}{nº} & \multicolumn{1}{c}{$T$ (s)} & \multicolumn{1}{c}{nº} & \multicolumn{1}{c}{$T$ (s)} \\
 		\hline
-		1             & 11,86                     & 11,81                     & 11,74                     & 11,78                       & 11,81                     \\
-		2             & 12,02                     & 11,80                     & 11,69                     & 11,83                       & 11,73                     \\
-		3             & 11,95                     & 11,74                     & 11,69                     & 11,85                       & 11,72                     \\
-		4             & 11,84                     & 11,53                     & 11,85                     & 11,57                       & 11,76                     \\
-		5             & 11,78                     & 11,70                     & 11,86                     & 11,68                       & 11,72                     \\
-		6             & 11,81                     & 11,84                     & 11,76                     & 11,67                       & 11,69                     \\
-		7             & 11,90                     & 11,80                     & 11,85                     & 11,78                       & 11,76                     \\
-		8             & 11,75                     & 11,77                     & 11,46                     & 11,77                       & 11,69                     \\
-		9             & 11,85                     & 11,96                     & 11,88                     & 11,66                       & 11,75                     \\
-		10            & 11,86                     & 11,67                     & 11,64                     & 11,67                       & 11,69                     \\
-		11            & 11,89                     & 11,90                     & 11,51                     & 11,56                       & 11,78                     \\
-		12            & 11,85                     & 11,95                     & 11,54                     & 11,53                       & 11,79                     \\
-		13            & 11,88                     & 11,75                     & 11,60                     & 11,69                       & 11,85                     \\
-		14            & 11,82                     & 11,85                     & 11,80                     & 11,67                       & 11,87                     \\
-		15            & 11,98                     & 11,52                     & 11,37                     & 11,79                       & 11,72                     \\
-		16            & 11,69                     & 11,52                     & 11,48                     & 11,70                       & 11,68                     \\
-		17            & 11,91                     & 11,57                     & 11,81                     & 11,80                       & 11,80                     \\
-		18            & 11,78                     & 11,69                     & 11,64                     & 11,71                       & 11,82                     \\
-		19            & 11,72                     & 11,57                     & 11,82                     & 11,59                       & 11,84                     \\
-		20            & 11,79                     & 11,72                     & 11,76                     & 11,70                       & 11,54                     \\
+		1.                     & 1,1925000                   & 26.                    & 1,1915000                   & 51.                    & 1,1911000                   & 76.                    & 1,1898000                   \\
+		2.                     & 1,1920000                   & 27.                    & 1,1917000                   & 52.                    & 1,1905000                   & 77.                    & 1,1896000                   \\
+		3.                     & 1,1922000                   & 28.                    & 1,1915000                   & 53.                    & 1,1910000                   & 78.                    & 1,1904000                   \\
+		4.                     & 1,1910000                   & 29.                    & 1,1912000                   & 54.                    & 1,1906000                   & 79.                    & 1,1896000                   \\
+		5.                     & 1,1934000                   & 30.                    & 1,1918000                   & 55.                    & 1,1910000                   & 80.                    & 1,1901000                   \\
+		6.                     & 1,1928000                   & 31.                    & 1,1913000                   & 56.                    & 1,1902000                   & 81.                    & 1,1896000                   \\
+		7.                     & 1,1923000                   & 32.                    & 1,1916000                   & 57.                    & 1,1903000                   & 82.                    & 1,1894000                   \\
+		8.                     & 1,1921000                   & 33.                    & 1,1915000                   & 58.                    & 1,1904000                   & 83.                    & 1,1896000                   \\
+		9.                     & 1,1922000                   & 34.                    & 1,1911000                   & 59.                    & 1,1903000                   & 84.                    & 1,1905000                   \\
+		10.                    & 1,1920000                   & 35.                    & 1,1917000                   & 60.                    & 1,1906000                   & 85.                    & 1,1898000                   \\
+		11.                    & 1,1918000                   & 36.                    & 1,1910000                   & 61.                    & 1,1909000                   & 86.                    & 1,1891000                   \\
+		12.                    & 1,1920000                   & 37.                    & 1,1910000                   & 62.                    & 1,1904000                   & 87.                    & 1,1906000                   \\
+		13.                    & 1,1919000                   & 38.                    & 1,1907000                   & 63.                    & 1,1902000                   & 88.                    & 1,1895000                   \\
+		14.                    & 1,1925000                   & 39.                    & 1,1910000                   & 64.                    & 1,1904000                   & 89.                    & 1,1905000                   \\
+		15.                    & 1,1909000                   & 40.                    & 1,1906000                   & 65.                    & 1,1906000                   & 90.                    & 1,1895000                   \\
+		16.                    & 1,1918000                   & 41.                    & 1,1905000                   & 66.                    & 1,1900000                   & 91.                    & 1,1899000                   \\
+		17.                    & 1,1919000                   & 42.                    & 1,1906000                   & 67.                    & 1,1904000                   & 92.                    & 1,1904000                   \\
+		18.                    & 1,1921000                   & 43.                    & 1,1908000                   & 68.                    & 1,1901000                   & 93.                    & 1,1900000                   \\
+		19.                    & 1,1917000                   & 44.                    & 1,1905000                   & 69.                    & 1,1902000                   & 94.                    & 1,1898000                   \\
+		20.                    & 1,1920000                   & 45.                    & 1,1905000                   & 70.                    & 1,1901000                   & 95.                    & 1,1904000                   \\
+		21.                    & 1,1918000                   & 46.                    & 1,1903000                   & 71.                    & 1,1903000                   & 96.                    & 1,1899000                   \\
+		22.                    & 1,1919000                   & 47.                    & 1,1907000                   & 72.                    & 1,1897000                   & 97.                    & 1,1898000                   \\
+		23.                    & 1,1913000                   & 48.                    & 1,1908000                   & 73.                    & 1,1909000                   & 98.                    & 1,1899000                   \\
+		24.                    & 1,1917000                   & 49.                    & 1,1904000                   & 74.                    & 1,1899000                   & 99.                    & 1,1899000                   \\
+		25.                    & 1,1921000                   & 50.                    & 1,1901000                   & 75.                    & 1,1906000                   & 100.                   & 1,1895000                   \\
 		\hline
 	\end{tabular}
-	\label{tab:medições_cm}
 \end{table}
-As Tabelas \ref{tab:medias_cm} e \ref{tab:medias_cb}
-contém a média do período e o desvio padrão associado das medições de cada aluno utilizando cronômetro de mão e de bancada, respectivamente.
+\end{table}
 
-\begin{table}[H]
-	\centering
-	% Primeira Tabela (lado esquerdo)
-	\begin{minipage}{0.48\textwidth}
-		\centering
-		\caption{Média e desvio padrão das medições com cronômetro de mão}
-		\begin{tabular}{c c c}
-			\hline
-			Aluno & $\overline{10T}\ \mathrm{(s)}$ & $\sigma\ \mathrm{(s)}$ \\ [0.5ex]
-			\hline
-			1     & 11,85                          & 0,08                   \\
-			2     & 11,73                          & 0,14                   \\
-			3     & 11,69                          & 0,15                   \\
-			4     & 11,70                          & 0,09                   \\
-			5     & 11,75                          & 0,08                   \\
-			\hline
-			Total & 11,74                          & 0,12                   \\
-			\hline
-		\end{tabular}
-		\label{tab:medias_cm}
-	\end{minipage}
-	\hfill
-	\begin{minipage}{0.48\textwidth}
-		\centering
-		\caption{Média e desvio padrão com cronômetro de bancada}
-		\begin{tabular}{c c c}
-			\hline
-			Aluno & $\overline{10T}\ \mathrm{(s)}$ & $\sigma\ \mathrm{(s)}$ \\ [0.5ex]
-			\hline
-			1     & 11,67                          & 0,08                   \\
-			2     & 11,71                          & 0,15                   \\
-			3     & 11,81                          & 0,09                   \\
-			4     & 11,68                          & 0,11                   \\
-			5     & 11,72                          & 0,12                   \\
-			\hline
-			Total & 11,72                          & 0,12                   \\
-			\hline
-		\end{tabular}
-		\label{tab:medias_cb}
-	\end{minipage}
-\end{table}
 
 A Tabela \ref{tab:resultados} contém os valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas obtidas da aceleração da gravidade local ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$
 
@@ -264,13 +233,11 @@ A Tabela \ref{tab:resultados} contém os valores e incertezas finais dos períod
 	\caption{Valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas experimentais da aceleração da gravidade local associadas ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$}
 	\begin{tabular}{l l l}
 		\hline
-		Grandeza                      & Valor   & Incerteza \\[0.5ex]
+		Grandeza                    & Valor   & Incerteza \\[0.5ex]
 		\hline
-		$T^{(1)}\ \mathrm{(s)}$       & $1,174$ & 0,012     \\
-		$T^{(2)}\ \mathrm{(s)}$       & $1,172$ & 0,012     \\
-		$g^{(1)}\ \mathrm{(m/s^{2})}$ & $10,03$ & 0,15      \\
-		$g^{(2)}\ \mathrm{(m/s^{2})}$ & $10,06$ & 0,15      \\
-		$g_{0}\ \mathrm{(m/s^{2})}$   & $9,786$ &           \\
+		$T\ \mathrm{(s)}$           & $1,174$ & 0,012     \\
+		$g \mathrm{(m/s^{2})}$      & $10,03$ & 0,15      \\
+		$g_{0}\ \mathrm{(m/s^{2})}$ & $9,786$ &           \\
 		\hline
 	\end{tabular}
 	\label{tab:resultados}
@@ -280,34 +247,13 @@ Por fim, a Figura \ref{fig:histogramas} contém os histogramas dos valores medid
 
 \begin{figure}[H]
 	\centering
-	\caption{Histogramas de frequência das medidas}
+	\caption{Histograma de frequência das medidas}
 	\label{fig:histogramas}
 
-	\begin{subfigure}[b]{\textwidth}
-		\centering
-		\includegraphics[width=0.6\textwidth]{figura_cb.png}
-		\caption{Histograma para os valores obtidos com o cronômetro de bancada}
-		\label{fig:sub_a}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.6\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figura_cm.png}
-		\caption{Histograma para os valores obtidos com o cronômetro de mão}
-		\label{fig:sub_b}
-	\end{subfigure}
 \end{figure}
 
 \newpage
 \section{DISCUSSÃO}
-
-Com base nos resultados desenvolvidos na seção anterior, é possível discutir a coerência dos ensaios conduzidos entre os cinco alunos, bem como compará-los com valores de referência pré-estabelecidos.
-
-Para o cronômetro de mão, as médias de 10 períodos distribuem-se com desvio padrão $0,06$ em torno da média de $11,74$, de modo que se espera que aproximadamente $95\%$ das médias calculadas encontrem-se no intervalo $[11,62;11,87]\ \text{s}$, correspondente uma meia largura de dois desvios padrão\cite{vuolo2019}. A largura dessa intervalo de confiabilidade corresponde a aproximadamente $2,13\%$ da média entre os alunos, indicando boa precisão e repitibilidade nos ensaios. Também, os desvios padrão dos conjuntos de medidas de cada um dos alunos distribuem-se todos na ordem de grandeza de $100\ \text{ms}$, a mesma do tempo de reação médio do ser-humano, que varia entre $100$ e $500\ \text{ms}$.
-
-A análise análoga pode ser feita para as medidas provenientes dos cronômetros de bancada, de onde obtém-se que aproximadamente $95\%$ das médias calculadas deve se encontrar no intervalo $[11,61; 11,83]\ \text{s}$. A largura dessa intervalo de confiabilidade corresponde a aproximadamente $1,88\%$ da média entre os alunos, indicando boa precisão e repitibilidade nos ensaios. Também, é possível extrair a conclusão análoga em relação aos desvios padrão obtidos por cada um dos alunos, uma vez que eles se distribuem no intervalo $[80, 150]\ \text{ms}$, todos da ordem de grandez de $100\ \text{ms}$, próximo de tempo de reação médio de um ser humano.
-
-
-Para comparar quantitativamente o ajuste do histograma experimental obtido com uma distribuição Gaussiana, pode-se comparar o desvio acumulado entre a distribuição Gaussiana e o histograma experimental com a variação acumulada do histograma em torno da média. Sendo $f_{hist}$ as frequências observadas experimentalmente e $f_{Gauss}$ as esperadas pela distribuição Gaussiana, a Equação \ref{eq:comp} exibe essa comparação\cite{barrosneto2001}.
 
 \begin{equation}\label{eq:comp}
 	q = \frac{\sum_{i}(f_{Gauss,i}-{f_{hist}})^2}{\sum_{i}(f_{hist, i}-\overline{f_{hist}})^2}
@@ -316,20 +262,6 @@ Para comparar quantitativamente o ajuste do histograma experimental obtido com u
 Nesse cálculo, o coeficiente $q$ assume valor nulo se a distribuição ajusta perfeitamente os dados experimentais obtidos, enquanto seu valor se distancia de $0$ quando a distribuição proposta não ajusta bem os dados.
 
 A Figura \ref{fig:desvios} é uma representação gráfica para os desvios da distribuição Gaussiana em relação às observações experimentais para cada um dos cronômetros, dados por $\delta = f_{Gauss} - f_{hist}$.
-
-\begin{figure}[H]
-	\centering
-
-	\includegraphics[width = \linewidth]{desvios_histogramas.png}
-	\caption{À esquerda, desvios para as medições com cronômetro de bancada, $q = 0,0888$} À direita, desvios para as medições com cronômetro de mão, $q = 0,0945$.
-	\label{fig:desvios}
-\end{figure}
-
-Qualitativamente, a distribuição dos desvios não aparenta seguir qualquer padrão em ambos os gráficos da Figura \ref{fig:desvios}, coeretemente com o esperado para uma distribuição aleatória. Quantitativamente, a distribuição Gaussiana do cronômetro de bancada apresentou $q\approx 8,9\%$, enquanto a do cronômetro de mão apresentou $q \approx 9,5\%$, indicando que erro acumulado é significativamente menor que a variação em torno da média acumulada, ou seja, há uma boa concordância entre o histograma experimental a distribuição esperada para ambos os cronômetros.
-
-A diferença relativa entre o período médio obtido com o cronômetro de mão ($T^{(1)}$) e o período médio obtido com o cronômetro de bancada ($T^{(2)}$) será $e = \frac{|T^{(2)}-T^{(1)}|}{(T^{(1)}+T^{(2)})/2} \approx 0,17\%\ll 1$, indicando uma boa homogeneidade dos dados coletados entre os dois conjuntos relativos a cada um dos cronômetros. Ainda, essa hipótese é reforçada por meio da igualdade dos desvios padrão da média até, pelo menos, a segunda casa decimal, assim como mostra as Tabelas \ref{tab:medias_cm} e \ref{tab:medias_cb}.
-
-Por fim, é possível comparar os valores obtidos para aceleração da gravidade pelos ensaios conduzidos com cada um dos cronômetros. Novamente, pode-se calcular a diferença relativa entre os dois valores obtidos para a gravidade, dada por $e =\frac{|g^{(2)}-g^{(1)}|}{(g^{(1)}+g^{(2)})/2}\approx 0,34\%\ll 1$, resultado que é consequência da homogeneidade dos dados coletados entre os conjuntos de cada um dos cronômetros. Também, é possível calcular a diferença relativa ao valor de referência $g_0 = 9,786\ \text{m/s}^2$, dada por $e_i = |g^{(i)}-g_0|/g_0$. Para ambos os conjuntos de dados, essa diferença relativa resulta em, aproximadamente, $2,8\%$ até a primeira casa decimal, indicando uma boa concordância dos resultados obtidos com o valor de referência pré-estabelecido.
 
 
 \newpage
