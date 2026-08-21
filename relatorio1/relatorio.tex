@@ -161,19 +161,23 @@
 \setcounter{page}{1}
 
 \section{Resumo}
+O objetivo desse experimento foi a determinação de um valor para a aceleração local da gravidade com base no modelo teórico de um
+pêndulo simples com amplitude de oscilação pequena, tendo sido utlizados cronômetros de mão e de bancada, além de um fotodiodo,
+para a determinação do período de oscilação.
 
 \newpage
 
 \begin{multicols}{2}
 
 	\section{Introdução}
-	O período de oscilação de um pêndulo simples depende da aceleração local da gravidade
+	O período de oscilação de um pêndulo simples depende da aceleração local da gravidade $g$, sendo que
+	para amplitudes pequenas pode ser aproximado por $T = 2\pi \sqrt{\frac{l}{g}}$, onde l é o comprimento do fio.
 
 	Dado um pêndulo simples composto por um corpo pontual de massa $m$ preso a um suporte estático por um fio inextensível de massa desprezível
 	e comprimento $l$, com uma aceleração local da gravidade constante de módulo $g$, tem-se que o pêndulo pode se mover apenas ao longo da circunferência
 	de raio $l$ centrada no ponto de fixação do pêndulo, de modo que pode-se tomar uma coordenada generalizada $\theta$ correspondente ao arco de
 	circunferência cujas extremidades são o ponto mais baixo que o pêndulo pode atingir (quando o fio está alinhado com a direção da
-	aceleração local da gravidade) e a posição do pêndulo, com o sentido anti-horário sendo tomado como o positivo e sendo $s = l\theta$ o comprimento do arco.
+	aceleração local da gravidade) e a posição do pêndulo, com o sentido anti-horário sendo tomado como o positivo e sendo $s = l\theta$ o comprimento orientado do arco.
 	Dessa forma, ao definir a linha horizontal que passa pelo ponto de suporte do pêndulo como a refeência para o potencial gravitacional, temos que
 	as energias cinética (Eq. \ref{eq:cinetica}) e potencial (Eq. \ref{eq:potencial}) associadas ao sistema são
 	\begin{equation}\label{eq:cinetica}
@@ -194,7 +198,19 @@
 	\end{equation}
 	chega-se na equação
 	\begin{equation}
-		a = 2;
+		\ddot{\theta} = \frac{g}{l}\sin{\theta}
+	\end{equation}
+	Utilizando a aproximação dos pequenos ângulos $\sin{\theta} \approx \theta$, essa expressão se reduz a
+	\begin{equation}
+		\ddot{\theta} = \frac{g}{l}\theta
+	\end{equation}
+	Para condições iniciais $\theta_{0}$ pequeno e $\dot{\theta_{0}} = 0$, essa equação diferencial ordinária linear de segunda ordem possui solução
+	\begin{equation}
+		\theta(t) = \theta_{0}\cos{(\sqrt{\frac{g}{l}}t)}
+	\end{equation}
+	Sendo $\omega = \sqrt{\frac{g}{l}}$ a velocidade angular do pêndulo, seu período é dado por
+	\begin{equation}\label{eq:periodo}
+		T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{l}{g}}
 	\end{equation}
 
 
