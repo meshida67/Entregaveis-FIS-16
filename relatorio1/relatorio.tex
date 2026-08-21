@@ -163,7 +163,8 @@
 \section{Resumo}
 O objetivo desse experimento foi a determinação de um valor para a aceleração local da gravidade com base no modelo teórico de um
 pêndulo simples com amplitude de oscilação pequena, tendo sido utlizados cronômetros de mão e de bancada, além de um fotodiodo,
-para a determinação do período de oscilação.
+para a determinação do período de oscilação, em repetidas medições. Os dados obtidos forma submetidos a uma análise estatística
+
 
 \newpage
 
@@ -178,37 +179,46 @@ para a determinação do período de oscilação.
 	de raio $l$ centrada no ponto de fixação do pêndulo, de modo que pode-se tomar uma coordenada generalizada $\theta$ correspondente ao arco de
 	circunferência cujas extremidades são o ponto mais baixo que o pêndulo pode atingir (quando o fio está alinhado com a direção da
 	aceleração local da gravidade) e a posição do pêndulo, com o sentido anti-horário sendo tomado como o positivo e sendo $s = l\theta$ o comprimento orientado do arco.
+<<<<<<< HEAD
 	Dessa forma, ao definir a linha horizontal que passa pelo ponto de suporte do pêndulo como a referência para o potencial gravitacional, temos que
+=======
+	Dessa forma, ao definir a linha horizontal que passa pelo ponto de suporte do pêndulo como a refeência para o potencial gravitacional, temos que
+>>>>>>> 0de4ffc7f341054774f71b4449cce891364c53e3
 	as energias cinética (Eq. \ref{eq:cinetica}) e potencial (Eq. \ref{eq:potencial}) associadas ao sistema são:
 	\begin{equation}\label{eq:cinetica}
 		K = \frac{m\dot{s}^2}{2} = \frac{ml^2\dot{\theta}^2}{2}
 	\end{equation}
-	e
+	e:
 	\begin{equation}\label{eq:potencial}
 		U = -mgl\cos(\theta),
 	\end{equation}
+<<<<<<< HEAD
 	onde $\dot{s}$ representa a derivada temporal da função $s$.
 	O Lagrangiano resultante, dado pela relação $L = K - U$, é expresso na Equação \ref{eq:lagrangiano}
+=======
+	onde $\dot{y}$ representa a derivada temporal de uma função $y$.
+	O Lagrangiano resultante, dado pela relação $L = K - U$\cite{springer}, é expresso na equação \ref{eq:lagrangiano}
+>>>>>>> 0de4ffc7f341054774f71b4449cce891364c53e3
 	\begin{equation}\label{eq:lagrangiano}
 		L = \frac{ml^2\dot{\theta}^2}{2} -mgl\cos(\theta).
 	\end{equation}
-	A partir da equação de Euler-Lagrange
+	A partir da equação de Euler-Lagrange\cite{springer}:
 	\begin{equation}
 		\frac{d}{dt} \frac{\partial L}{\partial \dot{\theta}} = \frac{\partial L}{\partial \theta}
 	\end{equation}
-	chega-se na equação
+	chega-se na equação:
 	\begin{equation}
 		\ddot{\theta} = \frac{g}{l}\sin{\theta}
 	\end{equation}
-	Utilizando a aproximação dos pequenos ângulos $\sin{\theta} \approx \theta$, essa expressão se reduz a
+	Utilizando a aproximação dos pequenos ângulos $\sin{\theta} \approx \theta$, essa expressão se reduz a:
 	\begin{equation}
 		\ddot{\theta} = \frac{g}{l}\theta
 	\end{equation}
-	Para condições iniciais $\theta_{0}$ pequeno e $\dot{\theta_{0}} = 0$, essa equação diferencial ordinária linear de segunda ordem possui solução
+	Para condições iniciais $\theta_{0}$ pequeno e $\dot{\theta_{0}} = 0$, essa equação diferencial ordinária linear de segunda ordem possui solução:
 	\begin{equation}
 		\theta(t) = \theta_{0}\cos{(\sqrt{\frac{g}{l}}t)}
 	\end{equation}
-	Sendo $\omega = \sqrt{\frac{g}{l}}$ a velocidade angular do pêndulo, seu período é dado por
+	Sendo $\omega = \sqrt{\frac{g}{l}}$ a velocidade angular do pêndulo, seu período é dado por:
 	\begin{equation}\label{eq:periodo}
 		T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{l}{g}}
 	\end{equation}
@@ -218,7 +228,6 @@ para a determinação do período de oscilação.
 	Para cumprir o objetivo traçado minimizando as incertezas relativas, foram realizadas 100 medições do período de oscilação de um pêndulo simples composto
 	por uma massa esférica presa a um suporte por um fio. Mediu-se a distância entre o centro de massa e o apoio no suporte de $l= (35,00\pm0,05)\ \text{cm}$,
 	como mostra a Figura \ref{fig:pendulo}.
-
 	\newpage
 	\begin{figure}[H]
 		\centering
@@ -230,47 +239,11 @@ para a determinação do período de oscilação.
 
 
 	\section{Resultados}
-	A Tabela \ref{tab:medições}
-	contém as medições  do período de oscilação do pêndulo utilizando um cronômetro.
-	\begin{table}[H]
-		\centering
-		\caption{Medições do período de oscilação do pêndulo ($T$) em segundos.}
-		\label{tab:medições}
-		\vspace{0.5\baselineskip}
-		\begin{tabular}{|l l | l l | l l | l l|}
-			\hline
-			\multicolumn{1}{|c}{nº} & \multicolumn{1}{c|}{$T$ (s)} & \multicolumn{1}{c}{nº} & \multicolumn{1}{c|}{$T$ (s)} & \multicolumn{1}{c}{nº} & \multicolumn{1}{c|}{$T$ (s)} & \multicolumn{1}{c}{nº} & \multicolumn{1}{c|}{$T$ (s)} \\
-			\hline
-			1.                      & 1,1925                       & 26.                    & 1,1915                       & 51.                    & 1,1911                       & 76.                    & 1,1898                       \\
-			2.                      & 1,1920                       & 27.                    & 1,1917                       & 52.                    & 1,1905                       & 77.                    & 1,1896                       \\
-			3.                      & 1,1922                       & 28.                    & 1,1915                       & 53.                    & 1,1910                       & 78.                    & 1,1904                       \\
-			4.                      & 1,1910                       & 29.                    & 1,1912                       & 54.                    & 1,1906                       & 79.                    & 1,1896                       \\
-			5.                      & 1,1934                       & 30.                    & 1,1918                       & 55.                    & 1,1910                       & 80.                    & 1,1901                       \\
-			6.                      & 1,1928                       & 31.                    & 1,1913                       & 56.                    & 1,1902                       & 81.                    & 1,1896                       \\
-			7.                      & 1,1923                       & 32.                    & 1,1916                       & 57.                    & 1,1903                       & 82.                    & 1,1894                       \\
-			8.                      & 1,1921                       & 33.                    & 1,1915                       & 58.                    & 1,1904                       & 83.                    & 1,1896                       \\
-			9.                      & 1,1922                       & 34.                    & 1,1911                       & 59.                    & 1,1903                       & 84.                    & 1,1905                       \\
-			10.                     & 1,1920                       & 35.                    & 1,1917                       & 60.                    & 1,1906                       & 85.                    & 1,1898                       \\
-			11.                     & 1,1918                       & 36.                    & 1,1910                       & 61.                    & 1,1909                       & 86.                    & 1,1891                       \\
-			12.                     & 1,1920                       & 37.                    & 1,1910                       & 62.                    & 1,1904                       & 87.                    & 1,1906                       \\
-			13.                     & 1,1919                       & 38.                    & 1,1907                       & 63.                    & 1,1902                       & 88.                    & 1,1895                       \\
-			14.                     & 1,1925                       & 39.                    & 1,1910                       & 64.                    & 1,1904                       & 89.                    & 1,1905                       \\
-			15.                     & 1,1909                       & 40.                    & 1,1906                       & 65.                    & 1,1906                       & 90.                    & 1,1895                       \\
-			16.                     & 1,1918                       & 41.                    & 1,1905                       & 66.                    & 1,1900                       & 91.                    & 1,1899                       \\
-			17.                     & 1,1919                       & 42.                    & 1,1906                       & 67.                    & 1,1904                       & 92.                    & 1,1904                       \\
-			18.                     & 1,1921                       & 43.                    & 1,1908                       & 68.                    & 1,1901                       & 93.                    & 1,1900                       \\
-			19.                     & 1,1917                       & 44.                    & 1,1905                       & 69.                    & 1,1902                       & 94.                    & 1,1898                       \\
-			20.                     & 1,1920                       & 45.                    & 1,1905                       & 70.                    & 1,1901                       & 95.                    & 1,1904                       \\
-			21.                     & 1,1918                       & 46.                    & 1,1903                       & 71.                    & 1,1903                       & 96.                    & 1,1899                       \\
-			22.                     & 1,1919                       & 47.                    & 1,1907                       & 72.                    & 1,1897                       & 97.                    & 1,1898                       \\
-			23.                     & 1,1913                       & 48.                    & 1,1908                       & 73.                    & 1,1909                       & 98.                    & 1,1899                       \\
-			24.                     & 1,1917                       & 49.                    & 1,1904                       & 74.                    & 1,1899                       & 99.                    & 1,18990                      \\
-			25.                     & 1,1921                       & 50.                    & 1,1901                       & 75.                    & 1,1906                       & 100.                   & 1,1895                       \\
-			\hline
-		\end{tabular}
-	\end{table}
 
-	A Tabela \ref{tab:resultados} contém os valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas obtidas da aceleração da gravidade local ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$
+
+	A Tabela \ref{tab:resultados}
+	contém os valores e incertezas finais dos períodos medidos utilizando fotodiodo ($T^{(1)}$) e tracker ($T^{(2)}$), as estimativas obtidas
+	da aceleração da gravidade local ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$
 
 	\begin{table}[H]
 		\centering
@@ -297,7 +270,7 @@ para a determinação do período de oscilação.
 	\end{figure}
 
 	\newpage
-	\section{DISCUSSÃO}
+	\section{Discussão}
 
 	\begin{equation}\label{eq:comp}
 		q = \frac{\sum_{i}(f_{Gauss,i}-{f_{hist}})^2}{\sum_{i}(f_{hist, i}-\overline{f_{hist}})^2}
@@ -314,6 +287,6 @@ para a determinação do período de oscilação.
 	\renewcommand{\refname}{}
 \end{multicols}
 \vspace{-1.5\baselineskip}
-\bibliography{referencias_sintese3}
+\bibliography{referencias_relatorio1}
 
 \end{document}
