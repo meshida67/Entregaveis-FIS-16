@@ -110,7 +110,7 @@
 	\vfill
 
 	{\large\bfseries
-		Experimento do Pêndulo Simples\\[2.0\baselineskip]
+		Determinação da gravidade por meio do pêndulo simples\\[2.0\baselineskip]
 	}
 
 	\vfill
@@ -139,7 +139,7 @@
 		Profa. Sônia Guimarães\\
 		Prof. Filipe Matusalém\\
 		Prof. Bogos Sismanoglu\\[0.5\baselineskip]
-		Data de entrega: 27/08/2026
+		Data de entrega: 03/09/2026
 	}
 
 	\vfill
@@ -160,79 +160,134 @@
 \renewcommand{\headrulewidth}{0pt}
 \setcounter{page}{1}
 
-\section{Resumo}
-O objetivo desse experimento foi a determinação de um valor para a aceleração local da gravidade com base no modelo teórico de um
-pêndulo simples com amplitude de oscilação pequena, tendo sido utlizados cronômetros de mão e de bancada, além de um fotodiodo e
-um software tracker em alta taxa de amostragem,
-para a determinação do período de oscilação, em repetidas medições. Os dados obtidos forma submetidos a uma análise estatística
-
+\section*{Resumo}
 
 \newpage
 
 \begin{multicols}{2}
 
 	\section{Introdução}
-	O período de oscilação de um pêndulo simples depende da aceleração local da gravidade $g$, sendo que
-	para amplitudes pequenas pode ser aproximado por $T = 2\pi \sqrt{\frac{l}{g}}$, onde l é o comprimento do fio.
+	Um pêndulo simples é uma montagem experimental caracterizada por meio da suspensão utilizando um fio, suposto ideal, de uma massa qualquer $m$ em um ponto em torno do qual ela possa oscilar livremente. Se consideradas pequenas amplitudes angulares, o movimento oscilatório pode ser aproximado para um movimento harmônico simples de período $T$, o qual depende da gravidade $g$ e da distância fixa $l$ entre o centro de massa do objeto suspenso e o ponto de suspensão.
 
-	Dado um pêndulo simples composto por um corpo pontual de massa $m$ preso a um suporte estático por um fio inextensível de massa desprezível
-	e comprimento $l$, com uma aceleração local da gravidade constante de módulo $g$, tem-se que o pêndulo pode se mover apenas ao longo da circunferência
-	de raio $l$ centrada no ponto de fixação do pêndulo, de modo que pode-se tomar uma coordenada generalizada $\theta$ correspondente ao arco de
-	circunferência cujas extremidades são o ponto mais baixo que o pêndulo pode atingir (quando o fio está alinhado com a direção da
-	aceleração local da gravidade) e a posição do pêndulo, com o sentido anti-horário sendo tomado como o positivo e sendo $s = l\theta$ o comprimento orientado do arco.
+	Considere uma massa esférica $m$ presa, por meio de um fio ideal, a um ponto fixo no teto em um meio onde pode ser desprezada a resistência do ar, assim como mostra a Figura \ref{fig:pendulo_intro}.
 
-	Dessa forma, ao definir a linha horizontal que passa pelo ponto de suporte do pêndulo como a referência para o potencial gravitacional, temos que
-
-	as energias cinética (Eq. \ref{eq:cinetica}) e potencial (Eq. \ref{eq:potencial}) associadas ao sistema são:
-	\begin{equation}\label{eq:cinetica}
-		K = \frac{m\dot{s}^2}{2} = \frac{ml^2\dot{\theta}^2}{2}
-	\end{equation}
-	e:
-	\begin{equation}\label{eq:potencial}
-		U = -mgl\cos(\theta),
-	\end{equation}
-
-	onde $\dot{y}$ representa a derivada temporal de uma função $y$.
-	O Lagrangiano resultante, dado pela relação $L = K - U$\cite{springer}, é expresso na equação \ref{eq:lagrangiano}
-
-	\begin{equation}\label{eq:lagrangiano}
-		L = \frac{ml^2\dot{\theta}^2}{2} -mgl\cos(\theta).
-	\end{equation}
-	A partir da equação de Euler-Lagrange\cite{springer}:
-	\begin{equation}
-		\frac{d}{dt} \frac{\partial L}{\partial \dot{\theta}} = \frac{\partial L}{\partial \theta}
-	\end{equation}
-	chega-se na equação:
-	\begin{equation}
-		\ddot{\theta} = \frac{g}{l}\sin{\theta}
-	\end{equation}
-	Utilizando a aproximação dos pequenos ângulos $\sin{\theta} \approx \theta$, essa expressão se reduz a:
-	\begin{equation}
-		\ddot{\theta} = \frac{g}{l}\theta
-	\end{equation}
-	Para condições iniciais $\theta_{0}$ pequeno e $\dot{\theta_{0}} = 0$, essa equação diferencial ordinária linear de segunda ordem possui solução:
-	\begin{equation}
-		\theta(t) = \theta_{0}\cos{(\sqrt{\frac{g}{l}}t)}
-	\end{equation}
-	Sendo $\omega = \sqrt{\frac{g}{l}}$ a velocidade angular do pêndulo, seu período é dado por:
-	\begin{equation}\label{eq:periodo}
-		T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{l}{g}}
-	\end{equation}
-
-
-	\section{Procedimento experimental}
-	Para cumprir o objetivo traçado minimizando as incertezas relativas, foram realizadas 100 medições do período de oscilação de um pêndulo simples composto
-	por uma massa esférica presa a um suporte por um fio. Mediu-se a distância entre o centro de massa e o apoio no suporte de $l= (35,00\pm0,05)\ \text{cm}$,
-	como mostra a Figura \ref{fig:pendulo}.
-	\newpage
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.45\linewidth]{pendulo.jpeg}
+		\includegraphics[width = 0.95\linewidth]{pendulo_intro.png}
+
+		\caption{Esquematização de um pêndulo simples}
+		\label{fig:pendulo_intro}
+	\end{figure}
+
+	A distância fixa entre o ponto de apoio no teto e o centro de massa da esfera é $l$ e a suposição de idealidade do fio inclui inextensibilidade e massa aproximadamente nula. Adotando um sistema de coordenadas polares com pivô no ponto de apoio, a Equação \ref{eq:vel} é a velocidade da massa esférica, que não possui componentes radiais.
+
+	\begin{equation}\label{eq:vel}
+		v = l\dot\theta
+	\end{equation}
+
+	em que $\dot\theta$ é a primeira derivada temporal de $\theta(t)$, o ângulo que o fio do pêndulo faz com a vertical em um tempo $t$. Também, para um dado $\theta$, a variação de altura $\Delta h(\theta)$ em relação de equilíbrio é dada pela Equação \ref{eq:deltah}, segundo sugere a geometria da Figura \ref{fig:pendulo_intro}.
+	
+	\begin{equation}\label{eq:deltah}
+		\Delta h = l(1-\cos\theta)
+	\end{equation}
+
+	Por meio disso, é possível escrever a energia total da partícula, que terá uma compente cinética e outra potencial gravitacional, assim como faz a Equação \ref{eq:energianaprox}.
+
+	\begin{equation}\label{eq:energianaprox}
+		E_{mec} = \frac{1}{2}ml^2\dot\theta^2 + mgl(1-\cos\theta)
+	\end{equation}
+
+	que descreve uma oscilação genérica em que o período depende da amplitude angular. Pode-se considerar, portanto, pequenas amplitudes angulares, de forma que $|\theta(t)|\le\theta_0\ll 1\ \text{rad}$. Nesse regime, pode-se considerar a Série de Maclaurin para $\cos\theta$, expressa na Equação \ref{eq:mclaurincos}.
+	
+	\begin{equation}\label{eq:mclaurincos}
+		\cos\theta = 1 - \frac{1}{2}\theta^2 + \mathcal{O}(\theta^4)
+	\end{equation}
+
+	cuja aproximação em segunda ordem resulta em um erro relativo menor que $0,07\%$ para $\theta\le 20^\circ\approx 0,35\ \text{rad}$. Portanto, usando a Série de Maclaurin truncada até segunda ordem, obtém-se uma expressão para a energia total dada segundo a Equação \ref{eq:energia}.
+
+	\begin{equation}\label{eq:energia}
+		E_{mec}\approx \frac{1}{2}ml^2\dot\theta^2+\frac{1}{2}mgl\theta^2
+	\end{equation}
+
+	que é idêntica à energia do movimento harmônico simples de frequência angular $\omega$ para uma variável $x$, expressa na Equação \ref{eq:energiaMHS}.
+
+	\begin{equation}\label{eq:energiaMHS}
+		E_{MHS} = \frac{1}{2}m\dot x^2 + \frac{1}{2}m\omega^2x^2
+	\end{equation}
+
+	Portanto, comparando as Equações \ref{eq:energia} e \ref{eq:energiaMHS}, pode-se obter a frequência angular $\omega = 2\pi/T$ do Movimento Harmônico que o pêndulo executa em pequenas amplitudes, assim como está na Equação \ref{eq:omega}.
+
+	\begin{equation}\label{eq:omega}
+		\omega^2=\frac{g}{l}
+	\end{equation}
+
+	de onde, obtém-se a Equação \ref{eq:periodo}, que expressa o período de oscilação do pêndulo em termos da aceleração da gravidade $g$ e da distância fixa entre o ponto de apoio e o centro de massa da esfera $l$.
+
+	\begin{equation}\label{eq:periodo}
+		T=2\pi\sqrt{\frac{l}{g}}
+	\end{equation}
+
+	Neste experimento, buscou-se determinar o valor da aceleração da gravidade $g$ por meio da medição do período de um pêndulo simples. Também, buscou-se obter o período do pêndulo por meio de quatro métodos diferentes, cronômetro de mão, usando cronômetro de bancada, fotoporta e uma gravação de 240 fps, comparando-se os resultados obtidos para os períodos e para a aceleração da gravidade por meio de testes de hipótese.
+
+	\section{Procedimento experimental}
+	Foram conduzidos quatro métodos experimentais diferentes para medição do período do pêndulo simples, todos eles utilizando o arranjo experimental representado na Figura \ref{fig:pendulo}, em que uma massa esférica de metal é presa em um suporte universal por meio de um fio de \textit{nylon} suposto aproximadamente ideal. A distância entre o ponto de apoio no suporte e o centro de massa da esfera $l=(35,00\pm 0,05)\ \text{cm}$ foi medida com um trena e permanenceu constante em todos os experimentos.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.75\linewidth]{pendulo.jpeg}
 		\caption{Arranjo experimental utilizado para a determinação da gravidade}
 		\label{fig:pendulo}
 	\end{figure}
 
+	Nos dois primeiros métodos utilizados, foi o medido o tempo de dez oscilações do pêndulo simples, visando minimizar as incertezas relativas causadas pelo tempo de reação e outros erros aleatórios. O procedimento foi repetido cem vezes e cada tempo foi medido, simultaneamente, com um cronômetro de mão da marca CASIO e um cronômetro de bancada da marca Cidepe, como mostra a Figura \ref{fig:cronom}. Totalizaram-se, portanto, 200 medidas por meio destes dois métodos.
 
+	\begin{figure}[H]
+	\centering
+
+	\begin{subfigure}[b]{0.66\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{cronom_mesa.jpeg}
+		\caption{Cronômetro\\ de mesa}
+		\label{fig:sub_a}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.30\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{cronom_mao.jpeg}
+		\caption{Cronômetro de mão}
+		\label{fig:sub_b}
+	\end{subfigure}
+
+	\caption{Instrumentos de medição utilizados}
+	\label{fig:cronom}
+	\end{figure}
+
+	Também, utilizou-se o aplicativo \textit{Tracker} para a análise da gravação em 240 fps de um período do pêndulo simples, obtida por meio de um celular \textit{Samsung Galaxy S24FE}. No aplicativo, determinou-se a diferença em quadros entre duas passagens consecutivas na posição de máximo. A partir disso, determina-se o tempo de um período sabendo-se que um quadro corresponde a $1/240\ \text{s}$. Como incerteza instrumental associada a essa medida, utilizou-se o tempo de um quadro, ou seja, $\Delta t=1/240\ \text{s}\approx 0,004\ \text{s}$.
+
+	Por fim, utilizou-se uma fotoporta da marca PASCO acoplada na montagem experimental da Figura \ref{fig:pendulo} para a medição do período do pêndulo por meio de uma interface \textit{ScienceWorkshop 750} que se comunica com o \textit{software} PASCO correspondente. A Figura \ref{fig:fotoporta} exibe a montagem experimental adaptada.
+
+	\begin{figure}[H]
+	\centering
+
+	\begin{subfigure}[b]{0.60\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{interface.jpeg}
+		\caption{Interface de comunicação}
+		\label{fig:sub_a}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.38\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fotoporta.jpeg}
+		\caption{Fotoporta}
+		\label{fig:sub_b}
+	\end{subfigure}
+
+	\caption{Instrumentos de medição utilizados}
+	\label{fig:fotoporta}
+	\end{figure}
+
+	A fotoporta identifica cada passagem do pêndulo pela posição vertical e calcula o período por meio de uma lógica interna que contabiliza a extensão não nula da esfera. Para esse método, repetiu-se 100 vezes a medição do período do pêndulo, com uma incerteza correspondente a menor divisão de medição igual a $0,0001\ \text{s}$.
 
 	\section{Resultados}
 
