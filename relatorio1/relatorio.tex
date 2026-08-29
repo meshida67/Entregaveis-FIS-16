@@ -1,0 +1,290 @@
+\documentclass[12pt, a4paper, brazil]{article}
+\usepackage{fix-cm}
+
+\usepackage[a4paper,
+            top=3cm, bottom=2cm,
+            left=3cm, right=2cm]{geometry}
+
+\usepackage[num, overcite]{abntex2cite}
+\citebrackets[]
+\makeatletter
+\renewcommand\@biblabel[1]{[#1] }
+\makeatother
+
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{amsmath, amsfonts, amsthm, bm}
+\usepackage{newtxtext, newtxmath, mathtools}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{indentfirst}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{icomma}
+\usepackage{array}
+\usepackage{float}
+\usepackage{tikz}
+
+\usepackage{silence}
+\WarningFilter{latex}{Command \showhyphens has changed}
+
+\onehalfspacing
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.4\baselineskip}
+\justifying
+
+\usepackage{titlesec}
+
+\newcommand{\titlefix}{
+  \hyphenpenalty=10000
+  \exhyphenpenalty=10000
+  \emergencystretch=2em
+}
+
+\captionsetup{
+    justification=centering
+}
+
+\titleformat{\section}
+{\normalsize\bfseries\titlefix}
+{\thesection.}
+{0.5em}
+{}
+
+\titlespacing*{\section}
+{0.75cm}
+{1.5\baselineskip}
+{0.8\baselineskip}
+
+\titleformat{\subsection}
+{\normalsize\bfseries\titlefix}
+{\thesubsection.}
+{0.5em}
+{}
+
+\titlespacing*{\subsection}
+{1.5cm}
+{1.2\baselineskip}
+{0.6\baselineskip}
+
+\titleformat{\subsubsection}
+{\normalsize\bfseries\titlefix}
+{\thesubsubsection.}
+{0.5em}
+{}
+
+\titlespacing*{\subsubsection}
+{2.25cm}
+{1.0\baselineskip}
+{0.4\baselineskip}
+
+\titleformat{name=\section,numberless}
+{\normalsize\bfseries\centering\titlefix}
+{}
+{0em}
+{}
+
+\titlespacing*{name=\section,numberless}
+{0cm}
+{1.5\baselineskip}
+{0.8\baselineskip}
+
+\newcounter{rownum}
+\setcounter{rownum}{0}
+
+\newcolumntype{N}{>{\stepcounter{rownum}\therownum.}l}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{center}
+
+	\includegraphics[width=0.3\textwidth]{ita_rgb.jpg}
+
+	\vfill
+
+	{\large\bfseries
+		Experimento do Pêndulo Simples\\[2.0\baselineskip]
+	}
+
+	\vfill
+
+	{\normalsize\bfseries
+		Caio Schaden Ishida\\[0.5\baselineskip]
+		Felipe Osternes da Silva\\[0.5\baselineskip]
+		João Victor Evers Cordeiro\\[0.5\baselineskip]
+		Paulo Vinícius Rodrigues Azevedo\\[0.5\baselineskip]
+		Rafael Sakata Suzuki\\[0.5\baselineskip]
+	}
+
+	\vfill
+
+	{\normalsize\bfseries
+		Grupo nº 01\\[0.6\baselineskip]
+		Turma 30.2
+	}
+
+	\vfill
+
+	{\normalsize
+		\textbf{Professores}\\[0.5\baselineskip]
+		Prof. Marco Antonio Ridenti (coord.)\\
+		Prof. Amós Silva\\
+		Profa. Sônia Guimarães\\
+		Prof. Filipe Matusalém\\
+		Prof. Bogos Sismanoglu\\[0.5\baselineskip]
+		Data de entrega: 27/08/2026
+	}
+
+	\vfill
+
+	{\normalsize\bfseries
+		Departamento de Física\\
+		Divisão de Ciências Fundamentais\\
+		Instituto Tecnológico de Aeronáutica - ITA
+	}
+
+\end{center}
+
+\newpage
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setcounter{page}{1}
+
+\section{Resumo}
+O objetivo desse experimento foi a determinação de um valor para a aceleração local da gravidade com base no modelo teórico de um
+pêndulo simples com amplitude de oscilação pequena, tendo sido utlizados cronômetros de mão e de bancada, além de um fotodiodo e
+um software tracker em alta taxa de amostragem,
+para a determinação do período de oscilação, em repetidas medições. Os dados obtidos forma submetidos a uma análise estatística
+
+
+\newpage
+
+\begin{multicols}{2}
+
+	\section{Introdução}
+	O período de oscilação de um pêndulo simples depende da aceleração local da gravidade $g$, sendo que
+	para amplitudes pequenas pode ser aproximado por $T = 2\pi \sqrt{\frac{l}{g}}$, onde l é o comprimento do fio.
+
+	Dado um pêndulo simples composto por um corpo pontual de massa $m$ preso a um suporte estático por um fio inextensível de massa desprezível
+	e comprimento $l$, com uma aceleração local da gravidade constante de módulo $g$, tem-se que o pêndulo pode se mover apenas ao longo da circunferência
+	de raio $l$ centrada no ponto de fixação do pêndulo, de modo que pode-se tomar uma coordenada generalizada $\theta$ correspondente ao arco de
+	circunferência cujas extremidades são o ponto mais baixo que o pêndulo pode atingir (quando o fio está alinhado com a direção da
+	aceleração local da gravidade) e a posição do pêndulo, com o sentido anti-horário sendo tomado como o positivo e sendo $s = l\theta$ o comprimento orientado do arco.
+
+	Dessa forma, ao definir a linha horizontal que passa pelo ponto de suporte do pêndulo como a referência para o potencial gravitacional, temos que
+
+	as energias cinética (Eq. \ref{eq:cinetica}) e potencial (Eq. \ref{eq:potencial}) associadas ao sistema são:
+	\begin{equation}\label{eq:cinetica}
+		K = \frac{m\dot{s}^2}{2} = \frac{ml^2\dot{\theta}^2}{2}
+	\end{equation}
+	e:
+	\begin{equation}\label{eq:potencial}
+		U = -mgl\cos(\theta),
+	\end{equation}
+
+	onde $\dot{y}$ representa a derivada temporal de uma função $y$.
+	O Lagrangiano resultante, dado pela relação $L = K - U$\cite{springer}, é expresso na equação \ref{eq:lagrangiano}
+
+	\begin{equation}\label{eq:lagrangiano}
+		L = \frac{ml^2\dot{\theta}^2}{2} -mgl\cos(\theta).
+	\end{equation}
+	A partir da equação de Euler-Lagrange\cite{springer}:
+	\begin{equation}
+		\frac{d}{dt} \frac{\partial L}{\partial \dot{\theta}} = \frac{\partial L}{\partial \theta}
+	\end{equation}
+	chega-se na equação:
+	\begin{equation}
+		\ddot{\theta} = \frac{g}{l}\sin{\theta}
+	\end{equation}
+	Utilizando a aproximação dos pequenos ângulos $\sin{\theta} \approx \theta$, essa expressão se reduz a:
+	\begin{equation}
+		\ddot{\theta} = \frac{g}{l}\theta
+	\end{equation}
+	Para condições iniciais $\theta_{0}$ pequeno e $\dot{\theta_{0}} = 0$, essa equação diferencial ordinária linear de segunda ordem possui solução:
+	\begin{equation}
+		\theta(t) = \theta_{0}\cos{(\sqrt{\frac{g}{l}}t)}
+	\end{equation}
+	Sendo $\omega = \sqrt{\frac{g}{l}}$ a velocidade angular do pêndulo, seu período é dado por:
+	\begin{equation}\label{eq:periodo}
+		T = \frac{2\pi}{\omega} = 2\pi \sqrt{\frac{l}{g}}
+	\end{equation}
+
+
+	\section{Procedimento experimental}
+	Para cumprir o objetivo traçado minimizando as incertezas relativas, foram realizadas 100 medições do período de oscilação de um pêndulo simples composto
+	por uma massa esférica presa a um suporte por um fio. Mediu-se a distância entre o centro de massa e o apoio no suporte de $l= (35,00\pm0,05)\ \text{cm}$,
+	como mostra a Figura \ref{fig:pendulo}.
+	\newpage
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.45\linewidth]{pendulo.jpeg}
+		\caption{Arranjo experimental utilizado para a determinação da gravidade}
+		\label{fig:pendulo}
+	\end{figure}
+
+
+
+	\section{Resultados}
+
+
+	A Tabela \ref{tab:resultados}
+	contém os valores e incertezas finais dos períodos medidos utilizando fotodiodo ($T^{(3)}$) e tracker ($T^{(4)}$), as estimativas obtidas
+	da aceleração da gravidade local ($g^{(3)}$ e $g^{(4)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$
+
+	\begin{table}[H]
+		\centering
+		\caption{Valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas experimentais da aceleração da gravidade local associadas ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$}
+		\begin{tabular}{l l l}
+			\hline
+			Grandeza                     & Valor      & Incerteza  \\[0.5ex]
+			\hline
+			$T^{(3)} \mathrm{(s)}$       & $1,190821$ & $0,000894$ \\
+			$T^{(4)} \mathrm{(s)}$       & $1,1$      & $0,01$     \\
+			$g^{(3)} \mathrm{(m/s^{2})}$ & $9,743945$ & $0,104385$ \\
+			$g^{(4)} \mathrm{(m/s^2)} $  &            &            \\
+			$g_{0}\ \mathrm{(m/s^{2})}$  & $9,786$    &            \\
+			\hline
+		\end{tabular}
+		\label{tab:resultados}
+	\end{table}
+
+	Por fim, a Figura \ref{fig:histogramas} contém os histogramas dos valores medidos para os cronômetros de mesa e bancada comparados aos valores teóricos esperados para uma distribuição Gaussiana com desvios padrão calculados por meio de .
+
+	\begin{figure}[H]
+		\centering
+		\caption{Histograma de frequência das medidas}
+		\label{fig:histogramas}
+
+	\end{figure}
+
+	\newpage
+	\section{Discussão}
+
+	\begin{equation}\label{eq:comp}
+		q = \frac{\sum_{i}(f_{Gauss,i}-{f_{hist}})^2}{\sum_{i}(f_{hist, i}-\overline{f_{hist}})^2}
+	\end{equation}
+
+	Nesse cálculo, o coeficiente $q$ assume valor nulo se a distribuição ajusta perfeitamente os dados experimentais obtidos, enquanto seu valor se distancia de $0$ quando a distribuição proposta não ajusta bem os dados.
+
+	A Figura \ref{fig:desvios} é uma representação gráfica para os desvios da distribuição Gaussiana em relação às observações experimentais para cada um dos cronômetros, dados por $\delta = f_{Gauss} - f_{hist}$.
+
+
+	\newpage
+
+	\clearpage
+	\renewcommand{\refname}{}
+\end{multicols}
+\vspace{-1.5\baselineskip}
+\bibliography{referencias_relatorio1}
+
+\end{document}
