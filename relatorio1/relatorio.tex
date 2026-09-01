@@ -186,7 +186,7 @@
 	\end{equation}
 
 	em que $\dot\theta$ é a primeira derivada temporal de $\theta(t)$, o ângulo que o fio do pêndulo faz com a vertical em um tempo $t$. Também, para um dado $\theta$, a variação de altura $\Delta h(\theta)$ em relação de equilíbrio é dada pela Equação \ref{eq:deltah}, segundo sugere a geometria da Figura \ref{fig:pendulo_intro}.
-	
+
 	\begin{equation}\label{eq:deltah}
 		\Delta h = l(1-\cos\theta)
 	\end{equation}
@@ -198,7 +198,7 @@
 	\end{equation}
 
 	que descreve uma oscilação genérica em que o período depende da amplitude angular. Pode-se considerar, portanto, pequenas amplitudes angulares, de forma que $|\theta(t)|\le\theta_0\ll 1\ \text{rad}$. Nesse regime, pode-se considerar a Série de Maclaurin para $\cos\theta$, expressa na Equação \ref{eq:mclaurincos}.
-	
+
 	\begin{equation}\label{eq:mclaurincos}
 		\cos\theta = 1 - \frac{1}{2}\theta^2 + \mathcal{O}(\theta^4)
 	\end{equation}
@@ -242,24 +242,24 @@
 	Nos dois primeiros métodos utilizados, foi o medido o tempo de dez oscilações do pêndulo simples, visando minimizar as incertezas relativas causadas pelo tempo de reação e outros erros aleatórios. O procedimento foi repetido cem vezes e cada tempo foi medido, simultaneamente, com um cronômetro de mão da marca CASIO e um cronômetro de bancada da marca Cidepe, como mostra a Figura \ref{fig:cronom}. Totalizaram-se, portanto, 200 medidas por meio destes dois métodos.
 
 	\begin{figure}[H]
-	\centering
-
-	\begin{subfigure}[b]{0.66\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{cronom_mesa.jpeg}
-		\caption{Cronômetro\\ de mesa}
-		\label{fig:sub_a}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.30\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{cronom_mao.jpeg}
-		\caption{Cronômetro de mão}
-		\label{fig:sub_b}
-	\end{subfigure}
 
-	\caption{Instrumentos de medição utilizados}
-	\label{fig:cronom}
+		\begin{subfigure}[b]{0.66\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{cronom_mesa.jpeg}
+			\caption{Cronômetro\\ de mesa}
+			\label{fig:sub_a}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.30\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{cronom_mao.jpeg}
+			\caption{Cronômetro de mão}
+			\label{fig:sub_b}
+		\end{subfigure}
+
+		\caption{Instrumentos de medição utilizados}
+		\label{fig:cronom}
 	\end{figure}
 
 	Também, utilizou-se o aplicativo \textit{Tracker} para a análise da gravação em 240 fps de um período do pêndulo simples, obtida por meio de um celular \textit{Samsung Galaxy S24FE}. No aplicativo, determinou-se a diferença em quadros entre duas passagens consecutivas na posição de máximo. A partir disso, determina-se o tempo de um período sabendo-se que um quadro corresponde a $1/240\ \text{s}$. Como incerteza instrumental associada a essa medida, utilizou-se o tempo de um quadro, ou seja, $\Delta t=1/240\ \text{s}\approx 0,004\ \text{s}$.
@@ -267,24 +267,24 @@
 	Por fim, utilizou-se uma fotoporta da marca PASCO acoplada na montagem experimental da Figura \ref{fig:pendulo} para a medição do período do pêndulo por meio de uma interface \textit{ScienceWorkshop 750} que se comunica com o \textit{software} PASCO correspondente. A Figura \ref{fig:fotoporta} exibe a montagem experimental adaptada.
 
 	\begin{figure}[H]
-	\centering
-
-	\begin{subfigure}[b]{0.60\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{interface.jpeg}
-		\caption{Interface de comunicação}
-		\label{fig:sub_a}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.38\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{fotoporta.jpeg}
-		\caption{Fotoporta}
-		\label{fig:sub_b}
-	\end{subfigure}
 
-	\caption{Instrumentos de medição utilizados}
-	\label{fig:fotoporta}
+		\begin{subfigure}[b]{0.60\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{interface.jpeg}
+			\caption{Interface de comunicação}
+			\label{fig:sub_a}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.38\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{fotoporta.jpeg}
+			\caption{Fotoporta}
+			\label{fig:sub_b}
+		\end{subfigure}
+
+		\caption{Instrumentos de medição utilizados}
+		\label{fig:fotoporta}
 	\end{figure}
 
 	A fotoporta identifica cada passagem do pêndulo pela posição vertical e calcula o período por meio de uma lógica interna que contabiliza a extensão não nula da esfera. Para esse método, repetiu-se 100 vezes a medição do período do pêndulo, com uma incerteza correspondente a menor divisão de medição igual a $0,0001\ \text{s}$.
@@ -301,13 +301,13 @@
 		\caption{Valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas experimentais da aceleração da gravidade local associadas ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$}
 		\begin{tabular}{l l l}
 			\hline
-			Grandeza                     & Valor      & Incerteza  \\[0.5ex]
+			Grandeza                     & Valor     & Incerteza \\[0.5ex]
 			\hline
-			$T^{(3)} \mathrm{(s)}$       & $1,190821$ & $0,000894$ \\
-			$T^{(4)} \mathrm{(s)}$       & $1,1$      & $0,01$     \\
-			$g^{(3)} \mathrm{(m/s^{2})}$ & $9,743945$ & $0,104385$ \\
-			$g^{(4)} \mathrm{(m/s^2)} $  &            &            \\
-			$g_{0}\ \mathrm{(m/s^{2})}$  & $9,786$    &            \\
+			$T^{(3)} \mathrm{(s)}$       & $1,19082$ & $0,00013$ \\
+			$T^{(4)} \mathrm{(s)}$       & $1,196$   & $0,012$   \\
+			$g^{(3)} \mathrm{(m/s^{2})}$ & $9,744$   & $0,028$   \\
+			$g^{(4)} \mathrm{(m/s^2)} $  & $9,66$    & $0,19$    \\
+			$g_{0}\ \mathrm{(m/s^{2})}$  & $9,786$   &           \\
 			\hline
 		\end{tabular}
 		\label{tab:resultados}
