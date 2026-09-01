@@ -1,9 +1,9 @@
-\documentclass[12pt, a4paper, brazil]{article}
+\documentclass[12pt, a4paper, brazilian]{article}
 \usepackage{fix-cm}
 
 \usepackage[a4paper,
-            top=3cm, bottom=2cm,
-            left=3cm, right=2cm]{geometry}
+top=3cm, bottom=2cm,
+left=3cm, right=2cm]{geometry}
 
 \usepackage[num, overcite]{abntex2cite}
 \citebrackets[]
@@ -15,7 +15,7 @@
 \usepackage{booktabs}
 \usepackage{amsmath, amsfonts, amsthm, bm}
 \usepackage{newtxtext, newtxmath, mathtools}
-\usepackage[brazil]{babel}
+\usepackage[brazilian]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{indentfirst}
 \usepackage{microtype}
@@ -41,13 +41,13 @@
 \usepackage{titlesec}
 
 \newcommand{\titlefix}{
-  \hyphenpenalty=10000
-  \exhyphenpenalty=10000
-  \emergencystretch=2em
+	\hyphenpenalty=10000
+	\exhyphenpenalty=10000
+	\emergencystretch=2em
 }
 
 \captionsetup{
-    justification=centering
+	justification=centering
 }
 
 \titleformat{\section}
@@ -100,263 +100,271 @@
 \newcolumntype{N}{>{\stepcounter{rownum}\therownum.}l}
 
 \begin{document}
-
-\pagestyle{empty}
-
-\begin{center}
-
-	\includegraphics[width=0.3\textwidth]{ita_rgb.jpg}
-
-	\vfill
-
-	{\large\bfseries
-		Determinação da gravidade por meio do pêndulo simples\\[2.0\baselineskip]
-	}
-
-	\vfill
-
-	{\normalsize\bfseries
-		Caio Schaden Ishida\\[0.5\baselineskip]
-		Felipe Osternes da Silva\\[0.5\baselineskip]
-		João Victor Evers Cordeiro\\[0.5\baselineskip]
-		Paulo Vinícius Rodrigues Azevedo\\[0.5\baselineskip]
-		Rafael Sakata Suzuki\\[0.5\baselineskip]
-	}
-
-	\vfill
-
-	{\normalsize\bfseries
-		Grupo nº 01\\[0.6\baselineskip]
-		Turma 30.2
-	}
-
-	\vfill
-
-	{\normalsize
-		\textbf{Professores}\\[0.5\baselineskip]
-		Prof. Marco Antonio Ridenti (coord.)\\
-		Prof. Amós Silva\\
-		Profa. Sônia Guimarães\\
-		Prof. Filipe Matusalém\\
-		Prof. Bogos Sismanoglu\\[0.5\baselineskip]
-		Data de entrega: 03/09/2026
-	}
-
-	\vfill
-
-	{\normalsize\bfseries
-		Departamento de Física\\
-		Divisão de Ciências Fundamentais\\
-		Instituto Tecnológico de Aeronáutica - ITA
-	}
-
-\end{center}
-
-\newpage
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[R]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-\setcounter{page}{1}
-
-\section*{Resumo}
-
-\newpage
-
-\begin{multicols}{2}
-
-	\section{Introdução}
-	Um pêndulo simples é uma montagem experimental caracterizada por meio da suspensão utilizando um fio, suposto ideal, de uma massa qualquer $m$ em um ponto em torno do qual ela possa oscilar livremente. Se consideradas pequenas amplitudes angulares, o movimento oscilatório pode ser aproximado para um movimento harmônico simples de período $T$, o qual depende da gravidade $g$ e da distância fixa $l$ entre o centro de massa do objeto suspenso e o ponto de suspensão.
-
-	Considere uma massa esférica $m$ presa, por meio de um fio ideal, a um ponto fixo no teto em um meio onde pode ser desprezada a resistência do ar, assim como mostra a Figura \ref{fig:pendulo_intro}.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width = 0.95\linewidth]{pendulo_intro.png}
-
-		\caption{Esquematização de um pêndulo simples}
-		\label{fig:pendulo_intro}
-	\end{figure}
-
-	A distância fixa entre o ponto de apoio no teto e o centro de massa da esfera é $l$ e a suposição de idealidade do fio inclui inextensibilidade e massa aproximadamente nula. Adotando um sistema de coordenadas polares com pivô no ponto de apoio, a Equação \ref{eq:vel} é a velocidade da massa esférica, que não possui componentes radiais.
-
-	\begin{equation}\label{eq:vel}
-		v = l\dot\theta
-	\end{equation}
-
-	em que $\dot\theta$ é a primeira derivada temporal de $\theta(t)$, o ângulo que o fio do pêndulo faz com a vertical em um tempo $t$. Também, para um dado $\theta$, a variação de altura $\Delta h(\theta)$ em relação de equilíbrio é dada pela Equação \ref{eq:deltah}, segundo sugere a geometria da Figura \ref{fig:pendulo_intro}.
-
-	\begin{equation}\label{eq:deltah}
-		\Delta h = l(1-\cos\theta)
-	\end{equation}
-
-	Por meio disso, é possível escrever a energia total da partícula, que terá uma compente cinética e outra potencial gravitacional, assim como faz a Equação \ref{eq:energianaprox}.
-
-	\begin{equation}\label{eq:energianaprox}
-		E_{mec} = \frac{1}{2}ml^2\dot\theta^2 + mgl(1-\cos\theta)
-	\end{equation}
-
-	que descreve uma oscilação genérica em que o período depende da amplitude angular. Pode-se considerar, portanto, pequenas amplitudes angulares, de forma que $|\theta(t)|\le\theta_0\ll 1\ \text{rad}$. Nesse regime, pode-se considerar a Série de Maclaurin para $\cos\theta$, expressa na Equação \ref{eq:mclaurincos}.
-
-	\begin{equation}\label{eq:mclaurincos}
-		\cos\theta = 1 - \frac{1}{2}\theta^2 + \mathcal{O}(\theta^4)
-	\end{equation}
-
-	cuja aproximação em segunda ordem resulta em um erro relativo menor que $0,07\%$ para $\theta\le 20^\circ\approx 0,35\ \text{rad}$. Portanto, usando a Série de Maclaurin truncada até segunda ordem, obtém-se uma expressão para a energia total dada segundo a Equação \ref{eq:energia}.
-
-	\begin{equation}\label{eq:energia}
-		E_{mec}\approx \frac{1}{2}ml^2\dot\theta^2+\frac{1}{2}mgl\theta^2
-	\end{equation}
-
-	que é idêntica à energia do movimento harmônico simples de frequência angular $\omega$ para uma variável $x$, expressa na Equação \ref{eq:energiaMHS}.
-
-	\begin{equation}\label{eq:energiaMHS}
-		E_{MHS} = \frac{1}{2}m\dot x^2 + \frac{1}{2}m\omega^2x^2
-	\end{equation}
-
-	Portanto, comparando as Equações \ref{eq:energia} e \ref{eq:energiaMHS}, pode-se obter a frequência angular $\omega = 2\pi/T$ do Movimento Harmônico que o pêndulo executa em pequenas amplitudes, assim como está na Equação \ref{eq:omega}.
-
-	\begin{equation}\label{eq:omega}
-		\omega^2=\frac{g}{l}
-	\end{equation}
-
-	de onde, obtém-se a Equação \ref{eq:periodo}, que expressa o período de oscilação do pêndulo em termos da aceleração da gravidade $g$ e da distância fixa entre o ponto de apoio e o centro de massa da esfera $l$.
-
-	\begin{equation}\label{eq:periodo}
-		T=2\pi\sqrt{\frac{l}{g}}
-	\end{equation}
-
-	Neste experimento, buscou-se determinar o valor da aceleração da gravidade $g$ por meio da medição do período de um pêndulo simples. Também, buscou-se obter o período do pêndulo por meio de quatro métodos diferentes, cronômetro de mão, usando cronômetro de bancada, fotoporta e uma gravação de 240 fps, comparando-se os resultados obtidos para os períodos e para a aceleração da gravidade por meio de testes de hipótese.
-
-	\section{Procedimento experimental}
-	Foram conduzidos quatro métodos experimentais diferentes para medição do período do pêndulo simples, todos eles utilizando o arranjo experimental representado na Figura \ref{fig:pendulo}, em que uma massa esférica de metal é presa em um suporte universal por meio de um fio de \textit{nylon} suposto aproximadamente ideal. A distância entre o ponto de apoio no suporte e o centro de massa da esfera $l=(35,00\pm 0,05)\ \text{cm}$ foi medida com um trena e permanenceu constante em todos os experimentos.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.75\linewidth]{pendulo.jpeg}
-		\caption{Arranjo experimental utilizado para a determinação da gravidade}
-		\label{fig:pendulo}
-	\end{figure}
-
-	Nos dois primeiros métodos utilizados, foi o medido o tempo de dez oscilações do pêndulo simples, visando minimizar as incertezas relativas causadas pelo tempo de reação e outros erros aleatórios. O procedimento foi repetido cem vezes e cada tempo foi medido, simultaneamente, com um cronômetro de mão da marca CASIO e um cronômetro de bancada da marca Cidepe, como mostra a Figura \ref{fig:cronom}. Totalizaram-se, portanto, 200 medidas por meio destes dois métodos.
-
-	\begin{figure}[H]
-		\centering
-
-		\begin{subfigure}[b]{0.66\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{cronom_mesa.jpeg}
-			\caption{Cronômetro\\ de mesa}
-			\label{fig:sub_a}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[b]{0.30\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{cronom_mao.jpeg}
-			\caption{Cronômetro de mão}
-			\label{fig:sub_b}
-		\end{subfigure}
-
-		\caption{Instrumentos de medição utilizados}
-		\label{fig:cronom}
-	\end{figure}
-
-	Também, utilizou-se o aplicativo \textit{Tracker} para a análise da gravação em 240 fps de um período do pêndulo simples, obtida por meio de um celular \textit{Samsung Galaxy S24FE}. No aplicativo, determinou-se a diferença em quadros entre duas passagens consecutivas na posição de máximo. A partir disso, determina-se o tempo de um período sabendo-se que um quadro corresponde a $1/240\ \text{s}$. Como incerteza instrumental associada a essa medida, utilizou-se o tempo de um quadro, ou seja, $\Delta t=1/240\ \text{s}\approx 0,004\ \text{s}$.
-
-	Por fim, utilizou-se uma fotoporta da marca PASCO acoplada na montagem experimental da Figura \ref{fig:pendulo} para a medição do período do pêndulo por meio de uma interface \textit{ScienceWorkshop 750} que se comunica com o \textit{software} PASCO correspondente. A Figura \ref{fig:fotoporta} exibe a montagem experimental adaptada.
-
-	\begin{figure}[H]
-		\centering
-
-		\begin{subfigure}[b]{0.60\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{interface.jpeg}
-			\caption{Interface de comunicação}
-			\label{fig:sub_a}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[b]{0.38\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{fotoporta.jpeg}
-			\caption{Fotoporta}
-			\label{fig:sub_b}
-		\end{subfigure}
-
-		\caption{Instrumentos de medição utilizados}
-		\label{fig:fotoporta}
-	\end{figure}
-
-	A fotoporta identifica cada passagem do pêndulo pela posição vertical e calcula o período por meio de uma lógica interna que contabiliza a extensão não nula da esfera. Para esse método, repetiu-se 100 vezes a medição do período do pêndulo, com uma incerteza correspondente a menor divisão de medição igual a $0,0001\ \text{s}$.
-
-	\section{Resultados}
-
-
-	A Tabela \ref{tab:resultados}
-	contém os valores e incertezas finais dos períodos medidos utilizando fotodiodo ($T^{(3)}$) e tracker ($T^{(4)}$), as estimativas obtidas
-	da aceleração da gravidade local ($g^{(3)}$ e $g^{(4)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$
-
-	\begin{table}[H]
-		\centering
-		\caption{Valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas experimentais da aceleração da gravidade local associadas ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$}
-		\begin{tabular}{l l l}
-			\hline
-			Grandeza                     & Valor     & Incerteza \\[0.5ex]
-			\hline
-			$T^{(3)} \mathrm{(s)}$       & $1,19082$ & $0,00013$ \\
-			$T^{(4)} \mathrm{(s)}$       & $1,196$   & $0,012$   \\
-			$g^{(3)} \mathrm{(m/s^{2})}$ & $9,744$   & $0,028$   \\
-			$g^{(4)} \mathrm{(m/s^2)} $  & $9,66$    & $0,19$    \\
-			$g_{0}\ \mathrm{(m/s^{2})}$  & $9,786$   &           \\
-			\hline
-		\end{tabular}
-		\label{tab:resultados}
-	\end{table}
-
-	Por fim, a Figura \ref{fig:histogramas} contém os histogramas dos valores medidos para os cronômetros de mesa e bancada comparados aos valores teóricos esperados para uma distribuição Gaussiana com desvios padrão calculados por meio de .
-
-	\begin{figure}[H]
-		\centering
-		\caption{Histograma de frequência das medidas}
-		\label{fig:histogramas}
-
-	\end{figure}
-
-	\begin{table}[H]
-		\centering
-		\caption{Valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas experimentais da aceleração da gravidade local associadas ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$}
-		\begin{tabular}{l l l}
-			\hline
-			Grandeza                      & Valor   & Incerteza \\[0.5ex]
-			\hline
-			$T^{(1)}\ \mathrm{(s)}$       & $1,174$ & 0,012     \\
-			$T^{(2)}\ \mathrm{(s)}$       & $1,172$ & 0,012     \\
-			$g^{(1)}\ \mathrm{(m/s^{2})}$ & $10,03$ & 0,15      \\
-			$g^{(2)}\ \mathrm{(m/s^{2})}$ & $10,06$ & 0,15      \\
-			$g_{0}\ \mathrm{(m/s^{2})}$   & $9,786$ &           \\
-			\hline
-		\end{tabular}
-		\label{tab:resultadoss}
-	\end{table}
-
+	
+	\pagestyle{empty}
+	
+	\begin{center}
+		
+		\includegraphics[width=0.3\textwidth]{ita_rgb.jpg}
+		
+		\vfill
+		
+		{\large\bfseries
+			Determinação da gravidade por meio do pêndulo simples\\[2.0\baselineskip]
+		}
+		
+		\vfill
+		
+		{\normalsize\bfseries
+			Caio Schaden Ishida\\[0.5\baselineskip]
+			Felipe Osternes da Silva\\[0.5\baselineskip]
+			João Victor Evers Cordeiro\\[0.5\baselineskip]
+			Paulo Vinícius Rodrigues Azevedo\\[0.5\baselineskip]
+			Rafael Sakata Suzuki\\[0.5\baselineskip]
+		}
+		
+		\vfill
+		
+		{\normalsize\bfseries
+			Grupo nº 01\\[0.6\baselineskip]
+			Turma 30.2
+		}
+		
+		\vfill
+		
+		{\normalsize
+			\textbf{Professores}\\[0.5\baselineskip]
+			Prof. Marco Antonio Ridenti (coord.)\\
+			Prof. Amós Silva\\
+			Profa. Sônia Guimarães\\
+			Prof. Filipe Matusalém\\
+			Prof. Bogos Sismanoglu\\[0.5\baselineskip]
+			Data de entrega: 03/09/2026
+		}
+		
+		\vfill
+		
+		{\normalsize\bfseries
+			Departamento de Física\\
+			Divisão de Ciências Fundamentais\\
+			Instituto Tecnológico de Aeronáutica - ITA
+		}
+		
+	\end{center}
+	
 	\newpage
-	\section{Discussão}
-
-	\begin{equation}\label{eq:comp}
-		q = \frac{\sum_{i}(f_{Gauss,i}-{f_{hist}})^2}{\sum_{i}(f_{hist, i}-\overline{f_{hist}})^2}
-	\end{equation}
-
-	Nesse cálculo, o coeficiente $q$ assume valor nulo se a distribuição ajusta perfeitamente os dados experimentais obtidos, enquanto seu valor se distancia de $0$ quando a distribuição proposta não ajusta bem os dados.
-
-	A Figura \ref{fig:desvios} é uma representação gráfica para os desvios da distribuição Gaussiana em relação às observações experimentais para cada um dos cronômetros, dados por $\delta = f_{Gauss} - f_{hist}$.
-
-
+	
+	\pagestyle{fancy}
+	\fancyhf{}
+	\fancyfoot[R]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\setcounter{page}{1}
+	
+	\section*{Resumo}
+	
 	\newpage
-
-	\clearpage
-	\renewcommand{\refname}{}
-\end{multicols}
-\vspace{-1.5\baselineskip}
-\bibliography{referencias_relatorio1}
-
+	
+	\begin{multicols}{2}
+		
+		\section{Introdução}
+		Um pêndulo simples é uma montagem experimental caracterizada por meio da suspensão utilizando um fio, suposto ideal, de uma massa qualquer $m$ em um ponto em torno do qual ela possa oscilar livremente. Se consideradas pequenas amplitudes angulares, o movimento oscilatório pode ser aproximado para um movimento harmônico simples de período $T$, o qual depende da gravidade $g$ e da distância fixa $l$ entre o centro de massa do objeto suspenso e o ponto de suspensão.
+		
+		Considere uma massa esférica $m$ presa, por meio de um fio ideal, a um ponto fixo no teto em um meio onde pode ser desprezada a resistência do ar, assim como mostra a Figura \ref{fig:pendulo_intro}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width = 0.95\linewidth]{pendulo_intro.png}
+			
+			\caption{Esquematização de um pêndulo simples}
+			\label{fig:pendulo_intro}
+		\end{figure}
+		
+		A distância fixa entre o ponto de apoio no teto e o centro de massa da esfera é $l$ e a suposição de idealidade do fio inclui inextensibilidade e massa aproximadamente nula. Adotando um sistema de coordenadas polares com pivô no ponto de apoio, a Equação \ref{eq:vel} é a velocidade da massa esférica, que não possui componentes radiais.
+		
+		\begin{equation}\label{eq:vel}
+			v = l\dot\theta
+		\end{equation}
+		
+		em que $\dot\theta$ é a primeira derivada temporal de $\theta(t)$, o ângulo que o fio do pêndulo faz com a vertical em um tempo $t$. Também, para um dado $\theta$, a variação de altura $\Delta h(\theta)$ em relação de equilíbrio é dada pela Equação \ref{eq:deltah}, segundo sugere a geometria da Figura \ref{fig:pendulo_intro}.
+		
+		\begin{equation}\label{eq:deltah}
+			\Delta h = l(1-\cos\theta)
+		\end{equation}
+		
+		Por meio disso, é possível escrever a energia total da partícula, que terá uma compente cinética e outra potencial gravitacional, assim como faz a Equação \ref{eq:energianaprox}.
+		
+		\begin{equation}\label{eq:energianaprox}
+			E_{mec} = \frac{1}{2}ml^2\dot\theta^2 + mgl(1-\cos\theta)
+		\end{equation}
+		
+		que descreve uma oscilação genérica em que o período depende da amplitude angular. Pode-se considerar, portanto, pequenas amplitudes angulares, de forma que $|\theta(t)|\le\theta_0\ll 1\ \text{rad}$. Nesse regime, pode-se considerar a Série de Maclaurin para $\cos\theta$, expressa na Equação \ref{eq:mclaurincos}.
+		
+		\begin{equation}\label{eq:mclaurincos}
+			\cos\theta = 1 - \frac{1}{2}\theta^2 + \mathcal{O}(\theta^4)
+		\end{equation}
+		
+		cuja aproximação em segunda ordem resulta em um erro relativo menor que $0,07\%$ para $\theta\le 20^\circ\approx 0,35\ \text{rad}$. Portanto, usando a Série de Maclaurin truncada até segunda ordem, obtém-se uma expressão para a energia total dada segundo a Equação \ref{eq:energia}.
+		
+		\begin{equation}\label{eq:energia}
+			E_{mec}\approx \frac{1}{2}ml^2\dot\theta^2+\frac{1}{2}mgl\theta^2
+		\end{equation}
+		
+		que é idêntica à energia do movimento harmônico simples de frequência angular $\omega$ para uma variável $x$, expressa na Equação \ref{eq:energiaMHS}.
+		
+		\begin{equation}\label{eq:energiaMHS}
+			E_{MHS} = \frac{1}{2}m\dot x^2 + \frac{1}{2}m\omega^2x^2
+		\end{equation}
+		
+		Portanto, comparando as Equações \ref{eq:energia} e \ref{eq:energiaMHS}, pode-se obter a frequência angular $\omega = 2\pi/T$ do Movimento Harmônico que o pêndulo executa em pequenas amplitudes, assim como está na Equação \ref{eq:omega}.
+		
+		\begin{equation}\label{eq:omega}
+			\omega^2=\frac{g}{l}
+		\end{equation}
+		
+		de onde, obtém-se a Equação \ref{eq:periodo}, que expressa o período de oscilação do pêndulo em termos da aceleração da gravidade $g$ e da distância fixa entre o ponto de apoio e o centro de massa da esfera $l$.
+		
+		\begin{equation}\label{eq:periodo}
+			T=2\pi\sqrt{\frac{l}{g}}
+		\end{equation}
+		
+		Neste experimento, buscou-se determinar o valor da aceleração da gravidade $g$ por meio da medição do período de um pêndulo simples. Também, buscou-se obter o período do pêndulo por meio de quatro métodos diferentes, cronômetro de mão, usando cronômetro de bancada, fotoporta e uma gravação de 240 fps, comparando-se os resultados obtidos para os períodos e para a aceleração da gravidade por meio de testes de hipótese.
+		
+		\section{Procedimento experimental}
+		Foram conduzidos quatro métodos experimentais diferentes para medição do período do pêndulo simples, todos eles utilizando o arranjo experimental representado na Figura \ref{fig:pendulo}, em que uma massa esférica de metal é presa em um suporte universal por meio de um fio de \textit{nylon} suposto aproximadamente ideal. A distância entre o ponto de apoio no suporte e o centro de massa da esfera $l=(35,00\pm 0,05)\ \text{cm}$ foi medida com um trena e permanenceu constante em todos os experimentos.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.75\linewidth]{pendulo.jpeg}
+			\caption{Arranjo experimental utilizado para a determinação da gravidade}
+			\label{fig:pendulo}
+		\end{figure}
+		
+		Nos dois primeiros métodos utilizados, foi o medido o tempo de dez oscilações do pêndulo simples, visando minimizar as incertezas relativas causadas pelo tempo de reação e outros erros aleatórios. O procedimento foi repetido cem vezes e cada tempo foi medido, simultaneamente, com um cronômetro de mão da marca CASIO e um cronômetro de bancada da marca Cidepe, como mostra a Figura \ref{fig:cronom}. Totalizaram-se, portanto, 200 medidas por meio destes dois métodos.
+		
+		\begin{figure}[H]
+			\centering
+			
+			\begin{subfigure}[b]{0.66\linewidth}
+				\centering
+				\includegraphics[width=\linewidth]{cronom_mesa.jpeg}
+				\caption{Cronômetro\\ de mesa}
+				\label{fig:sub_a}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.30\linewidth}
+				\centering
+				\includegraphics[width=\linewidth]{cronom_mao.jpeg}
+				\caption{Cronômetro de mão}
+				\label{fig:sub_b}
+			\end{subfigure}
+			
+			\caption{Instrumentos de medição utilizados}
+			\label{fig:cronom}
+		\end{figure}
+		
+		Também, utilizou-se o aplicativo \textit{Tracker} para a análise da gravação em 240 fps de um período do pêndulo simples, obtida por meio de um celular \textit{Samsung Galaxy S24FE}. No aplicativo, determinou-se a diferença em quadros entre duas passagens consecutivas na posição de máximo. A partir disso, determina-se o tempo de um período sabendo-se que um quadro corresponde a $1/240\ \text{s}$. Como incerteza instrumental associada a essa medida, utilizou-se o tempo de um quadro, ou seja, $\Delta t=1/240\ \text{s}\approx 0,004\ \text{s}$.
+		
+		Por fim, utilizou-se uma fotoporta da marca PASCO acoplada na montagem experimental da Figura \ref{fig:pendulo} para a medição do período do pêndulo por meio de uma interface \textit{ScienceWorkshop 750} que se comunica com o \textit{software} PASCO correspondente. A Figura \ref{fig:fotoporta} exibe a montagem experimental adaptada.
+		
+		\begin{figure}[H]
+			\centering
+			
+			\begin{subfigure}[b]{0.60\linewidth}
+				\centering
+				\includegraphics[width=\linewidth]{interface.jpeg}
+				\caption{Interface de comunicação}
+				\label{fig:sub_a_int}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.38\linewidth}
+				\centering
+				\includegraphics[width=\linewidth]{fotoporta.jpeg}
+				\caption{Fotoporta}
+				\label{fig:sub_b_int}
+			\end{subfigure}
+			
+			\caption{Instrumentos de medição utilizados}
+			\label{fig:fotoporta}
+		\end{figure}
+		
+		A fotoporta identifica cada passagem do pêndulo pela posição vertical e calcula o período por meio de uma lógica interna que contabiliza a extensão não nula da esfera. Para esse método, repetiu-se 100 vezes a medição do período do pêndulo, com uma incerteza correspondente a menor divisão de medição igual a $0,0001\ \text{s}$.
+		
+		\section{Resultados}
+		
+		
+		A Tabela \ref{tab:resultados}
+		contém os valores e incertezas finais dos períodos medidos utilizando fotodiodo ($T^{(3)}$) e tracker ($T^{(4)}$), as estimativas obtidas
+		da aceleração da gravidade local ($g^{(3)}$ e $g^{(4)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$
+		
+		\begin{table}[H]
+			\centering
+			\caption{Valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas experimentais da aceleração da gravidade local associadas ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$}
+			\begin{tabular}{l l l}
+				\hline
+				Grandeza                     & Valor     & Incerteza \\[0.5ex]
+				\hline
+				$T^{(3)} \mathrm{(s)}$       & $1,19082$ & $0,00013$ \\
+				$T^{(4)} \mathrm{(s)}$       & $1,196$   & $0,012$   \\
+				$g^{(3)} \mathrm{(m/s^{2})}$ & $9,744$   & $0,028$   \\
+				$g^{(4)} \mathrm{(m/s^2)} $  & $9,66$    & $0,19$    \\
+				$g_{0}\ \mathrm{(m/s^{2})}$  & $9,786$   &           \\
+				\hline
+			\end{tabular}
+			\label{tab:resultados}
+		\end{table}
+		
+		Por fim, a Figura \ref{fig:histogramas} contém os histogramas dos valores medidos para os cronômetros de mesa e bancada comparados aos valores teóricos esperados para uma distribuição Gaussiana com desvios padrão calculados por meio de .
+		
+		\begin{figure}[H]
+			\centering
+			\caption{Histograma de frequência das medidas}
+			\label{fig:histogramas}
+			
+		\end{figure}
+		
+		\begin{table}[H]
+			\centering
+			\caption{Valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas experimentais da aceleração da gravidade local associadas ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$}
+			\begin{tabular}{l l l}
+				\hline
+				Grandeza                      & Valor   & Incerteza \\[0.5ex]
+				\hline
+				$T^{(1)}\ \mathrm{(s)}$       & $1,174$ & 0,012     \\
+				$T^{(2)}\ \mathrm{(s)}$       & $1,172$ & 0,012     \\
+				$g^{(1)}\ \mathrm{(m/s^{2})}$ & $10,03$ & 0,15      \\
+				$g^{(2)}\ \mathrm{(m/s^{2})}$ & $10,06$ & 0,15      \\
+				$g_{0}\ \mathrm{(m/s^{2})}$   & $9,786$ &           \\
+				\hline
+			\end{tabular}
+			\label{tab:resultadoss}
+		\end{table}
+		
+		\newpage
+		\section{Discussão}
+		
+		\begin{equation}\label{eq:comp}
+			q = \frac{\sum_{i}(f_{Gauss,i}-{f_{hist}})^2}{\sum_{i}(f_{hist, i}-\overline{f_{hist}})^2}
+		\end{equation}
+		
+		Nesse cálculo, o coeficiente $q$ assume valor nulo se a distribuição ajusta perfeitamente os dados experimentais obtidos, enquanto seu valor se distancia de $0$ quando a distribuição proposta não ajusta bem os dados.
+		
+		A Figura \ref{fig:desvios} é uma representação gráfica para os desvios da distribuição Gaussiana em relação às observações experimentais para cada um dos cronômetros, dados por $\delta = f_{Gauss} - f_{hist}$.
+		
+		% TODO: Figura muito pequena.
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\linewidth]{desvios_histograma.png}
+			\caption{Desvios calculados para os dados do fotodiodo}
+			\label{fig:desvios}
+		\end{figure}
+		
+		
+		\newpage
+		
+		\clearpage
+		\renewcommand{\refname}{}
+	\end{multicols}
+	\vspace{-1.5\baselineskip}
+	\bibliography{referencias_relatorio1}
+	
 \end{document}
