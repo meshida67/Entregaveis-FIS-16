@@ -218,7 +218,7 @@ Pêndulo simples, aceleração da gravidade, métodos de medição.
 		E_{MHS} = \frac{1}{2}m\dot x^2 + \frac{1}{2}m\omega^2x^2
 	\end{equation}
 
-	Portanto, comparando as Equações \ref{eq:energia} e \ref{eq:energiaMHS}, pode-se obter a frequência angular $\omega = 2\pi/T$ do Movimento Harmônico que o pêndulo executa em pequenas amplitudes, assim como está na Equação \ref{eq:omega}.
+	Portanto, comparando as Equações \ref{eq:energia} e \ref{eq:energiaMHS}, pode-se obter a frequência angular $\omega = 2\pi/T$ do Movimento Harmônico que o pêndulo executa em pequenas amplitudes, assim como está na Equação \ref{eq:omega}.\cite{springer}
 
 	\begin{equation}\label{eq:omega}
 		\omega^2=\frac{g}{l}
@@ -295,9 +295,9 @@ Pêndulo simples, aceleração da gravidade, métodos de medição.
 	\section{Resultados}
 
 
-	A Tabela \ref{tab:resultados}
+	Com base nas metodologias apresentadas na seção anterior, foram conduzidos quatro experimentos para a determinação do período do pêndulo. A Tabela \ref{tab:resultados}
 	contém os valores e incertezas finais dos períodos medidos utilizando fotodiodo ($T^{(3)}$) e tracker ($T^{(4)}$), as estimativas obtidas
-	da aceleração da gravidade local ($g^{(3)}$ e $g^{(4)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$
+	da aceleração da gravidade local ($g^{(3)}$ e $g^{(4)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$.
 
 	\begin{table}[H]
 		\centering
@@ -316,14 +316,16 @@ Pêndulo simples, aceleração da gravidade, métodos de medição.
 		\label{tab:resultados}
 	\end{table}
 
-	Por fim, a Figura \ref{fig:histogramas} contém os histogramas dos valores medidos para os cronômetros de mesa e bancada comparados aos valores teóricos esperados para uma distribuição Gaussiana com desvios padrão calculados por meio de .
+	Além disso, a Figura \ref{fig:histograma} contém o histograma dos valores medidos por meio da fotoporta comparado a uma distribuição gaussiana com a mesma média e desvio padrão que os conjunto de dados obtido.
 
 	\begin{figure}[H]
 		\centering
 		\caption{Histograma de frequência das medidas}
-		\label{fig:histogramas}
-
+        \includegraphics[width=\linewidth]{figura_fd.png}
+		\label{fig:histograma}
 	\end{figure}
+
+    Por fim, a Tabela \ref{tab:resultadoss} contém os valores obtidos para o período e aceleração da gravidade por meio dos métodos manuais baseados no uso de cronômetros.
 
 	\begin{table}[H]
 		\centering
@@ -339,6 +341,7 @@ Pêndulo simples, aceleração da gravidade, métodos de medição.
 			$g_{0}\ \mathrm{(m/s^{2})}$   & $9,786$ &           \\
 			\hline
 		\end{tabular}
+        % Sério isso?
 		\label{tab:resultadoss}
 	\end{table}
 
@@ -353,22 +356,14 @@ Pêndulo simples, aceleração da gravidade, métodos de medição.
 
 	A Figura \ref{fig:desvios} é uma representação gráfica para os desvios da distribuição Gaussiana em relação às observações experimentais para cada um dos cronômetros, dados por $\delta = f_{Gauss} - f_{hist}$.
 
-    % TODO: Figura muito pequena.
     \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{desvios_histograma.png}
 	\caption{Desvios calculados para os dados do fotodiodo}
 	\label{fig:desvios}
 	\end{figure}
-
-
-	\newpage
-
-	\clearpage
-	\renewcommand{\refname}{}
+    \bibliography{referencias_relatorio1}
 \end{multicols}
-\vspace{-1.5\baselineskip}
-\bibliography{referencias_relatorio1}
 
 \end{document}
 
