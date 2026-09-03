@@ -97,3 +97,6 @@ ax.FontSize = 18;
 ax.LineWidth = 1.5;
 ax.XMinorTick = 'on';
 ax.YMinorTick = 'on';
+
+r2 = sum(err(:) .^ 2) / sum((y_hist(:) - mean(y_hist(:))) .^ 2);
+fprintf("%s: %f\n", arquivo, r2);

@@ -292,76 +292,77 @@ Pêndulo simples, aceleração da gravidade, métodos de medição.
 
 	A fotoporta identifica cada passagem do pêndulo pela posição vertical e calcula o período por meio de uma lógica interna que contabiliza a extensão não nula da esfera. Para esse método, repetiu-se 100 vezes a medição do período do pêndulo, com uma incerteza correspondente a menor divisão de medição igual a $0,0001\ \text{s}$.
 
-	\section{Resultados}
-
+	\section{Resultados e Discussão}
 
 	Com base nas metodologias apresentadas na seção anterior, foram conduzidos quatro experimentos para a determinação do período do pêndulo. A Tabela \ref{tab:resultados}
-	contém os valores e incertezas finais dos períodos medidos utilizando fotodiodo ($T^{(3)}$) e tracker ($T^{(4)}$), as estimativas obtidas
-	da aceleração da gravidade local ($g^{(3)}$ e $g^{(4)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$.
+	contém os valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$), cronômetro de bancada ($T^{(2)}$), fotodiodo ($T^{(3)}$) e \textit{tracker} ($T^{(4)}$), as estimativas obtidas da aceleração da gravidade local ($g^{(1)}$ até $g^{(4)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$.
 
 	\begin{table}[H]
 		\centering
-		\caption{Valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas experimentais da aceleração da gravidade local associadas ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$}
+		\caption{Medidas de período e aceleração local da gravidade, incluindo o valor de referência $g_{0}$}
 		\begin{tabular}{l l l}
 			\hline
-			Grandeza                     & Valor     & Incerteza \\[0.5ex]
+			Grandeza                      & Valor   & Incerteza \\[0.5ex]
 			\hline
-			$T^{(3)} \mathrm{(s)}$       & $1,19082$ & $0,00013$ \\
-			$T^{(4)} \mathrm{(s)}$       & $1,196$   & $0,012$   \\
-			$g^{(3)} \mathrm{(m/s^{2})}$ & $9,744$   & $0,028$   \\
-			$g^{(4)} \mathrm{(m/s^2)} $  & $9,66$    & $0,19$    \\
-			$g_{0}\ \mathrm{(m/s^{2})}$  & $9,786$   &           \\
+			$T^{(1)}\ \mathrm{(s)}$       & $1,174$   & 0,012     \\
+			$T^{(2)}\ \mathrm{(s)}$       & $1,172$   & 0,012     \\
+            $T^{(3)} \mathrm{(s)}$        & $1,19082$ & $0,00013$ \\
+			$T^{(4)} \mathrm{(s)}$        & $1,196$   & $0,012$   \\
+			$g^{(1)}\ \mathrm{(m/s^{2})}$ & $10,03$   & 0,15      \\
+			$g^{(2)}\ \mathrm{(m/s^{2})}$ & $10,06$   & 0,15      \\
+			$g^{(3)} \mathrm{(m/s^{2})}$  & $9,744$   & $0,028$   \\
+			$g^{(4)} \mathrm{(m/s^2)} $   & $9,66$    & $0,19$    \\
+            $g_{0}\ \mathrm{(m/s^{2})}$   & $9,786$   &           \\
 			\hline
 		\end{tabular}
 		\label{tab:resultados}
 	\end{table}
 
-	Além disso, a Figura \ref{fig:histograma} contém o histograma dos valores medidos por meio da fotoporta comparado a uma distribuição gaussiana com a mesma média e desvio padrão que os conjunto de dados obtido.
+	A fim de visualizar os dados obtidos, a Figura \ref{fig:histograma} contém os histogramas dos valores de período medidos comparados a distribuições gaussianas de mesma média e desvio padrão.
 
 	\begin{figure}[H]
 		\centering
 		\caption{Histograma de frequência das medidas}
+        \includegraphics[width=\linewidth]{figura_cm.png}
+        \includegraphics[width=\linewidth]{figura_cb.png}
         \includegraphics[width=\linewidth]{figura_fd.png}
 		\label{fig:histograma}
 	\end{figure}
-
-    Por fim, a Tabela \ref{tab:resultadoss} contém os valores obtidos para o período e aceleração da gravidade por meio dos métodos manuais baseados no uso de cronômetros.
-
-	\begin{table}[H]
-		\centering
-		\caption{Valores e incertezas finais dos períodos medidos utilizando cronômetro de mão ($T^{(1)}$) e de bancada ($T^{(2)}$), as estimativas experimentais da aceleração da gravidade local associadas ($g^{(1)}$ e $g^{(2)}$, respectivamente), e o valor de referência da aceleração local da gravidade $g_{0}$}
-		\begin{tabular}{l l l}
-			\hline
-			Grandeza                      & Valor   & Incerteza \\[0.5ex]
-			\hline
-			$T^{(1)}\ \mathrm{(s)}$       & $1,174$ & 0,012     \\
-			$T^{(2)}\ \mathrm{(s)}$       & $1,172$ & 0,012     \\
-			$g^{(1)}\ \mathrm{(m/s^{2})}$ & $10,03$ & 0,15      \\
-			$g^{(2)}\ \mathrm{(m/s^{2})}$ & $10,06$ & 0,15      \\
-			$g_{0}\ \mathrm{(m/s^{2})}$   & $9,786$ &           \\
-			\hline
-		\end{tabular}
-        % Sério isso?
-		\label{tab:resultadoss}
-	\end{table}
-
-	\newpage
-	\section{Discussão}
-
+    Com esses dados, pode-se estudar a qualidade do ajuste gaussiano utilizando o coeficiente de aderência $q$, descrito pela Equação \ref{eq:comp}:
 	\begin{equation}\label{eq:comp}
 		q = \frac{\sum_{i}(f_{Gauss,i}-{f_{hist}})^2}{\sum_{i}(f_{hist, i}-\overline{f_{hist}})^2}
 	\end{equation}
 
-	Nesse cálculo, o coeficiente $q$ assume valor nulo se a distribuição ajusta perfeitamente os dados experimentais obtidos, enquanto seu valor se distancia de $0$ quando a distribuição proposta não ajusta bem os dados.
+	Nesse cálculo, o coeficiente $q$ assume valor nulo se a distribuição ajusta perfeitamente os dados experimentais obtidos, enquanto seu valor se distancia de $0$ quando a distribuição proposta não ajusta bem os dados. A Tabela \ref{tab:determ} contém os valores de $q$ para cada cada experimento:
+   	\begin{table}[H]
+	\centering
+	\caption{Coeficientes de aderência para os experimentos 1, 2 e 3}
+	\begin{tabular}{l l}
+		\hline
+		Experimento               & $q$ \\[0.5ex]
+		\hline
+		Cronômetro de mão (1)     & 0.095 \\
+        Cronômetro de bancada (2) & 0.089 \\
+        Fotodiodo (3)             & 0.469 \\
+		\hline
+	\end{tabular}
+	\label{tab:determ}
+\end{table}
 
-	A Figura \ref{fig:desvios} é uma representação gráfica para os desvios da distribuição Gaussiana em relação às observações experimentais para cada um dos cronômetros, dados por $\delta = f_{Gauss} - f_{hist}$.
+	Visualmente, a Figura \ref{fig:desvios} é uma representação gráfica para os desvios da distribuição Gaussiana em relação às observações experimentais para cada uma dos métodos para medição do período, dados por $\delta = f_{Gauss} - f_{hist}$.
 
     \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{desvios_histograma.png}
-	\caption{Desvios calculados para os dados do fotodiodo}
+	\includegraphics[width=\linewidth]{desvios_cm.png}
+	\includegraphics[width=\linewidth]{desvios_cb.png}
+	\includegraphics[width=0.9\linewidth]{desvios_fd.png}
+	\caption{Desvios clculados para experimento com fotodiodo}
 	\label{fig:desvios}
 	\end{figure}
+
+    Além da comparação entre distribuições, pode-se comparar os diversos valores de $g$ obtidos experimentalmente e verificar se existe alguma diferença significativa entre os valores obtidos. Para isso, deve-se aplicar um teste de hipótese com $H: g^{(a)}=g^{(b)}$ para quaisquer valores $g^{(a)}$ e $g^{(b)}$ experimentalmente determinados. Para isso, 
+    
+    \section{Conclusão}
     \bibliography{referencias_relatorio1}
 \end{multicols}
 

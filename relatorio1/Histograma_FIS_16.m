@@ -69,7 +69,7 @@ end
 
 for i = 1:2
     r2(i) = sum(err(i,:) .^ 2) / sum((y_hist(i,:) - mean(y_hist(i,:))).^2);
-    disp(r2(i));
+    fprintf("%s: %f\n", arquivos{i}, r2(i));
 end
 
 for i = 1:2
