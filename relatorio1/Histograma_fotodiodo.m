@@ -41,24 +41,33 @@ err = - y_hist + norm(x_hist, n_exp, sigma_expec, data, h.BinWidth);
 hold on;
 
 x = linspace(graf_min, graf_max, 200);
+
 g = plot(x, norm(x, n_exp, sigma_expec, data, h.BinWidth), ...
-    'r', 'LineWidth', 1.5);
+    'r', 'LineWidth', 2.5);
 
 legend([h g], {'Dados experimentais', 'Distribuição Gaussiana'}, ...
-    'FontSize', 13, 'Location', 'best');
+    'FontSize', 16, 'Location', 'northeast');
 
 axis([graf_min graf_max 0 35]);
 
 ax = gca;
-ax.XAxis.FontSize = 14;
+
+ax.XAxis.FontSize = 18;
+ax.YAxis.FontSize = 18;
+
 ax.XMinorTick = 'on';
 ax.YMinorTick = 'on';
-ax.YAxis.FontSize = 14;
 
-tx = xlabel('\it{T} (s)');
+ax.LineWidth = 1.5;
+
+tx = xlabel('\it{10T} (s)');
 ty = ylabel('Frequência');
-tx.FontSize = 16;
-ty.FontSize = 16;
+
+tx.FontSize = 20;
+ty.FontSize = 20;
+
+title('Fotodiodo', ...
+    'FontSize', 20, 'FontWeight', 'bold');
 
 ferr = figure;
 
@@ -66,10 +75,25 @@ nexttile
 hold on
 box on
 
-p = plot(x_hist, err, 'b.', MarkerSize=17);
-plot(x, nulo(x), '--');
-legend('Desvios', 'Desvio nulo', fontsize = 13);
-xlabel('$10T$ (s)', Interpreter='latex', FontSize=16);
-ylabel('$f_{Gauss}-f_{hist}$', Interpreter='latex', FontSize=16);
+p = plot(x_hist, err, 'b.', 'MarkerSize', 22);
+
+p0 = plot(x, nulo(x), '--', 'LineWidth', 2.5);
+
+lgd = legend([p p0], 'Desvios', 'Desvio nulo');
+lgd.FontSize = 16;
+
+xlabel('$10T$ (s)', 'Interpreter', 'latex', 'FontSize', 20);
+ylabel('$f_{Gauss}-f_{hist}$', 'Interpreter', 'latex', 'FontSize', 20);
+
+title('Fotodiodo', ...
+    'FontSize', 20, 'FontWeight', 'bold');
+
 ylim([-10 10]);
-xlim([1.189, 1.194]);
+xlim([1.189 1.194]);
+
+% Aparência dos eixos
+ax = gca;
+ax.FontSize = 18;
+ax.LineWidth = 1.5;
+ax.XMinorTick = 'on';
+ax.YMinorTick = 'on';

@@ -4,6 +4,8 @@ close all;
 
 arquivos = {'dados_cb.txt', 'dados_cm.txt'};
 
+titulos = {'Cronômetro de bancada', 'Cronômetro de mão'};
+
 %Limites dos gráficos
 graf_min = 11.3;
 graf_max = 12.1;
@@ -18,7 +20,6 @@ function y = nulo(x)
     y = 0 * x;
 end
 
-%Plotando os histrogramas
 for i = 1:length(arquivos)
 
     data = readmatrix(arquivos{i}, 'NumHeaderLines', 1);
@@ -44,45 +45,58 @@ for i = 1:length(arquivos)
 
     x = linspace(graf_min, graf_max, 200);
     g = plot(x, norm(x, n_exp, sigma_expec, data, h.BinWidth), ...
-        'r', 'LineWidth', 1.5);
+        'r', 'LineWidth', 2.5);
 
     legend([h g], {'Dados experimentais', 'Distribuição Gaussiana'}, ...
-        'FontSize', 13, 'Location', 'best');
+        'FontSize', 16, 'Location', 'northeast');
 
     axis([graf_min graf_max 0 35]);
 
     ax = gca;
-    ax.XAxis.FontSize = 14;
+    ax.XAxis.FontSize = 18;
     ax.XMinorTick = 'on';
     ax.YMinorTick = 'on';
-    ax.YAxis.FontSize = 14;
+    ax.YAxis.FontSize = 18;
+    ax.LineWidth = 1.5;
 
     tx = xlabel('\it{10T} (s)');
     ty = ylabel('Frequência');
-    tx.FontSize = 16;
-    ty.FontSize = 16;
+    tx.FontSize = 20;
+    ty.FontSize = 20;
+
+    title(titulos{i}, 'FontSize', 20, 'FontWeight', 'bold');
 end
 
-%Calculandos os coefs de determinação
 for i = 1:2
     r2(i) = sum(err(i,:) .^ 2) / sum((y_hist(i,:) - mean(y_hist(i,:))).^2);
     disp(r2(i));
 end
 
-%Plotando os desvios
-ferr = figure;
-tiledlayout(1,2);
-
 for i = 1:2
-    nexttile
+
+    ferr = figure;
+    ferr.Color = 'w';
+    ferr.Name = ['Desvios - ' arquivos{i}];
+
     hold on
     box on
 
-    p = plot(x_hist(i, :), err(i, :), 'b.', MarkerSize=17);
-    plot(x, nulo(x), '--');
-    legend('Desvios', 'Desvio nulo', fontsize = 13);
-    xlabel('$10T$ (s)', Interpreter='latex', FontSize=16);
-    ylabel('$f_{Gauss}-f_{hist}$', Interpreter='latex', FontSize=16);
-    ylim([-6 6]);
-end
+    p = plot(x_hist(i, :), err(i, :), 'b.', MarkerSize=22);
+    p0 = plot(x, nulo(x), '--', 'LineWidth', 2.5);
 
+    legend([p p0], 'Desvios', 'Desvio nulo', 'FontSize', 16);
+
+    xlabel('$10T$ (s)', Interpreter='latex', FontSize=20);
+    ylabel('$f_{Gauss}-f_{hist}$', Interpreter='latex', FontSize=20);
+
+    title(titulos{i}, 'FontSize', 20, 'FontWeight', 'bold');
+
+    ylim([-6 6]);
+
+    ax = gca;
+    ax.FontSize = 18;
+    ax.LineWidth = 1.5;
+    ax.XMinorTick = 'on';
+    ax.YMinorTick = 'on';
+
+end
